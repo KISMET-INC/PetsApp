@@ -7,6 +7,10 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.text.format.DateFormat;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
+
+import com.example.howoldaremypets.Data.DatabaseHandler;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
@@ -18,6 +22,9 @@ import java.util.GregorianCalendar;
 
 public class UtilMethods {
   //  public static Date today;
+
+  private ImageView addFirstPet;
+  private DatabaseHandler db;
 
 
 
@@ -270,6 +277,8 @@ public class UtilMethods {
 
         return false;
     }
+
+
 }
 
 

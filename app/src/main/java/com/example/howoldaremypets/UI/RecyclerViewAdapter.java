@@ -10,6 +10,7 @@ import android.net.Uri;
 
 import com.example.howoldaremypets.Activities.ListActivity;
 
+import androidx.core.widget.ImageViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
@@ -59,6 +60,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         this.context = context;
         this.petListForPosition = petListForPosition;
         db = new DatabaseHandler(context);
+//        addFirstPet.findViewById(R.id.addpetimageview);
 
 
 
@@ -131,6 +133,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public TextView age;
         public ImageButton imageButton;
         public ImageView petImageIcon;
+        public ImageView addFirstPet;
+
 
         public int id;
 
@@ -167,7 +171,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     position = getAdapterPosition();
                     pet = petListForPosition.get(position);
                     deleteItem(pet.getId());
-                    Log.d("Item 3id :", String.valueOf(pet.getId()));
+
+
+                        Log.d("Item 3id :", String.valueOf(pet.getId()));
+
                     break;
 
             }

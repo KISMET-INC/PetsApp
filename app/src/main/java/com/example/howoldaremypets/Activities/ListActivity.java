@@ -1,9 +1,6 @@
 package com.example.howoldaremypets.Activities;
 
 import android.app.AlertDialog;
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -29,8 +26,6 @@ import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,6 +43,7 @@ public class ListActivity extends AppCompatActivity {
     private List<Pet> petsListFromDB;
     private List<Pet> petListForRecycleViewer;
     private DatabaseHandler db;
+    private ImageView addFirstPet;
 
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog dialog;
@@ -84,7 +80,7 @@ public class ListActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu_main,menu);
+        menuInflater.inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -102,11 +98,21 @@ public class ListActivity extends AppCompatActivity {
         listActivty = this;
 
 
-
         toolbar = (Toolbar) findViewById(R.id.toolbar1);
+        addFirstPet = (ImageView) findViewById(R.id.addpetimageview);
+
         setSupportActionBar(toolbar);
 
         db = new DatabaseHandler(this);
+        checkCount();
+
+
+        Log.d("dbcount", String.valueOf(db.getCount()));
+
+
+        if (db.getCount() >= 1) {
+            addFirstPet.setVisibility(View.INVISIBLE);
+        }
         recyclerView = (RecyclerView) findViewById(R.id.recyclerViewID);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -127,7 +133,7 @@ public class ListActivity extends AppCompatActivity {
             pet.setImageURI(c.getImageURI());
             pet.setImageBYTE(c.getImageBYTE());
 
-          Log.d("Item .id", String.valueOf(pet.getId()));
+            Log.d("Item .id", String.valueOf(pet.getId()));
 
             petListForRecycleViewer.add(pet);
         }
@@ -137,8 +143,8 @@ public class ListActivity extends AppCompatActivity {
 
     }
 
-    public static ListActivity getInstance(){
-        return   listActivty;
+    public static ListActivity getInstance() {
+        return listActivty;
     }
 
 
@@ -161,7 +167,8 @@ public class ListActivity extends AppCompatActivity {
 
 
         //TODO: Default Input for test purposes
-      //  petBirthdayInput.setText("12/12/2002");
+        petNameInput.setText("trevor");
+        petBirthdayInput.setText("12/12/2002");
 
 
         saveButton.setOnClickListener(new View.OnClickListener() {
@@ -176,14 +183,14 @@ public class ListActivity extends AppCompatActivity {
                     if (isValidDate) {
 
                         savePetToDB(v);
-                      //  recyclerViewAdapter.notifyDataSetChanged();
+                        checkCount();
+
+                        //  recyclerViewAdapter.notifyDataSetChanged();
 
                        /* NotificationManager notification = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
                         Notification notify = new Notification.Builder(getApplicationContext()).setContentTitle("Hello").setContentText("hi").setSmallIcon(R.drawable.ic_launcher_foreground).build();
                         notify.flags |= Notification.FLAG_AUTO_CANCEL;
                         notification.notify(0,notify);*/
-
-
 
 
                     } else {
@@ -255,14 +262,14 @@ public class ListActivity extends AppCompatActivity {
         pet.setBirthdayString(newBirthdayData);
 
 
-        if (petUriPlaceholder != null){
+        if (petUriPlaceholder != null) {
             pet.setImageURI(petUriPlaceholder);
             pet.setImageBYTE(petBytePlaceholder);
             petBytePlaceholder = null;
             petUriPlaceholder = null;
         }
 
-        if (imageResult ) {
+        if (imageResult) {
             pet.setImageURI(croppedURI.toString());
             createdByteImage = util.byteImageFromPath(imagePathFromCropResult);
             pet.setImageBYTE(createdByteImage);
@@ -271,17 +278,15 @@ public class ListActivity extends AppCompatActivity {
         }
 
 
-
         if (bundle == null) {
-
             db.addPet(pet);
             recyclerViewAdapter.notifyDataSetChanged();
             petListForRecycleViewer.add(pet);
             pet.setId(db.getLastId());
-            Log.d("dbcount",String.valueOf(db.getCount()));
-
+            Log.d("dbcount", String.valueOf(db.getCount()));
 
             db.close();
+
 
             Snackbar.make(v, "Pet Added!", Snackbar.LENGTH_LONG).show();
 
@@ -295,7 +300,7 @@ public class ListActivity extends AppCompatActivity {
             recyclerViewAdapter.notifyDataSetChanged();
             db.close();
 
-            petListForRecycleViewer.set(petIndex,pet);
+            petListForRecycleViewer.set(petIndex, pet);
 
         }
 
@@ -308,7 +313,7 @@ public class ListActivity extends AppCompatActivity {
     private void openGallery() {
         CropImage.activity()
                 .setGuidelines(CropImageView.Guidelines.ON)
-                .setAspectRatio(200,200)
+                .setAspectRatio(200, 200)
                 .start(this);
 
         /*dialog.setOnKeyListener(new Dialog.OnKeyListener() {
@@ -338,7 +343,7 @@ public class ListActivity extends AppCompatActivity {
 
         if (resultCode == 0) {
             dialog.dismiss();
-   //         PetActivity.this.finish();
+            //         PetActivity.this.finish();
 
         } else {
             if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
@@ -367,6 +372,15 @@ public class ListActivity extends AppCompatActivity {
         }
     }
 
+
+    public void checkCount() {
+        if (db.getCount() == 0) {
+            addFirstPet.setVisibility(View.VISIBLE);
+            Log.d("zero", "db count is zero");
+        } else {
+            addFirstPet.setVisibility(View.INVISIBLE);
+        }
+    }
 }
 
 
