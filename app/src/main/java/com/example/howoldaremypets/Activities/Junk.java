@@ -177,7 +177,7 @@ public class Junk {
 
         Log.d("PETBYTE ", pet.getImageBYTE().toString()) ;
 
-        db.addPet(pet);
+        db.addpet(pet);
         db.close();
 
 

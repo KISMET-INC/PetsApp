@@ -8,11 +8,22 @@
     tools:context=".Activities.ListActivity"
     tools:showIn="@layout/toolbar">
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewID"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/cake4"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <include
+        layout="@layout/add_pet_image"
+        android:layout_width="285dp"
+        android:layout_height="157dp"
+        app:layout_constraintRight_toRightOf="parent"
+
+        android:visibility="visible" />
 </androidx.constraintlayout.widget.ConstraintLayout>
