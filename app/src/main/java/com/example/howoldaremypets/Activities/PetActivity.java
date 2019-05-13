@@ -126,9 +126,9 @@ public class PetActivity extends AppCompatActivity {
                 Boolean isValidInput = util.isValidInput(petBirthdayInput.getText().toString().trim());
 
                 if (!petNameInput.getText().toString().isEmpty() && !petBirthdayInput.getText().toString().trim().isEmpty() && isValidInput) {
-                    Boolean isValidDate = util.dateValidation(petBirthdayInput.getText().toString().trim());
+                    int isValidDate = util.dateValidation(petBirthdayInput.getText().toString().trim());
 
-                    if (isValidDate) {
+                    if (isValidDate == 0) {
 
                         savePetToDB(v);
 

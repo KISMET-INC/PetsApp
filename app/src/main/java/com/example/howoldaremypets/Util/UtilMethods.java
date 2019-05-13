@@ -233,9 +233,8 @@ public class UtilMethods {
 
     }
 
-    //TODO: Restrict Birthday to past
 
-    public static boolean dateValidation(String dateString) {
+    public static int dateValidation(String dateString) {
         Date date = null;
         String[] array = dateString.split("/");
         int month = Integer.valueOf(array[0]) - 1;
@@ -254,12 +253,16 @@ public class UtilMethods {
         int toDay = today1.get(Calendar.DATE);
 
         boolean isDateBefore = today1.after(dateInput);
+        if ((!isDateBefore)){
+            return 2; //false not before
 
-        if ((month >= 0 && month <= 12) && (day >= 1 && day <= 31) && (year > 1000 && year <=toYear ) && isDateBefore) {
-            return true;
+        }  if ((month >= 0 && month <= 12) && (day >= 1 && day <= 31) && (year > 1000 )) {
+            return 1; // true
 
-        } else {
-            return false;
+        }
+
+        else {
+            return 0; //false
         }
 
     }

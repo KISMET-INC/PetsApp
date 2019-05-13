@@ -178,9 +178,9 @@ public class ListActivity extends AppCompatActivity {
                 Boolean isValidInput = util.isValidInput(petBirthdayInput.getText().toString().trim());
 
                 if (!petNameInput.getText().toString().isEmpty() && !petBirthdayInput.getText().toString().trim().isEmpty() && isValidInput) {
-                    Boolean isValidDate = util.dateValidation(petBirthdayInput.getText().toString().trim());
+                    int isValidDate = util.dateValidation(petBirthdayInput.getText().toString().trim());
 
-                    if (isValidDate) {
+                    if (isValidDate == 1) {
 
                         savePetToDB(v);
                         checkCount();
@@ -193,9 +193,14 @@ public class ListActivity extends AppCompatActivity {
                         notification.notify(0,notify);*/
 
 
-                    } else {
+                    } if (isValidDate ==0) {
                         Snackbar.make(v, "Please enter a valid date  MM/DD/YYYY ", Snackbar.LENGTH_LONG).show();
+
+                    } if (isValidDate ==2) {
+                        Snackbar.make(v, "Date must be before Today ", Snackbar.LENGTH_LONG).show();
                     }
+
+
 
                 } else
 
@@ -324,7 +329,6 @@ public class ListActivity extends AppCompatActivity {
                 if (keyCode == KeyEvent.KEYCODE_BACK) {
 
                     dialog.dismiss();
-                    PetActivity.this.finish();
 
 
                     return true;
@@ -343,7 +347,6 @@ public class ListActivity extends AppCompatActivity {
 
         if (resultCode == 0) {
             dialog.dismiss();
-            //         PetActivity.this.finish();
 
         } else {
             if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {

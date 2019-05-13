@@ -87,8 +87,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     //Get Pet Object
     public Pet getPet(int id) {
 
-        //TODO add pet Image URI
-        //TODO add pet Image BYTE
 
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -151,7 +149,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public int updatePet( Pet pet) {
         SQLiteDatabase db = this.getWritableDatabase();
 
-        //TODO : Update Long when update pet
 
         ContentValues values = new ContentValues();
         values.put(Constants.KEY_NAME, pet.getName());
