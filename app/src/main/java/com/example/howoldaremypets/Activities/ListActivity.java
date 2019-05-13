@@ -7,7 +7,6 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -15,6 +14,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.howoldaremypets.Data.DatabaseHandler;
 import com.example.howoldaremypets.Model.Pet;
@@ -29,11 +33,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 
 public class ListActivity extends AppCompatActivity {
 
@@ -47,7 +46,6 @@ public class ListActivity extends AppCompatActivity {
 
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog dialog;
-    private LayoutInflater inflater;
     private UtilMethods util;
     private EditText petNameInput;
     private EditText petBirthdayInput;
@@ -55,25 +53,16 @@ public class ListActivity extends AppCompatActivity {
     private static ListActivity listActivty;
 
     private ImageView imageButton;
-    private static int SELECT_PICTURE = 100;
-    private Uri pickedImageUri;
-    private byte[] imageByte;
-    public static final int REQUEST_CODE = 1;
-    String imagePath;
+
     private int petIDBundle;
     private Uri croppedURI;
     private byte[] createdByteImage = null;
-    private int isclosed = 0;
     private boolean imageResult = false;
     private String petUriPlaceholder;
     private byte[] petBytePlaceholder;
 
-    private ListActivity listActivity;
-
-    private byte[] imageByteFromBundle;
     String imagePathFromCropResult;
     private Bundle bundle = new Bundle();
-    byte[] inputData;
     int petIndex;
 
 
@@ -98,8 +87,8 @@ public class ListActivity extends AppCompatActivity {
         listActivty = this;
 
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar1);
-        addFirstPet = (ImageView) findViewById(R.id.addpetimageview);
+        toolbar = findViewById(R.id.toolbar1);
+        addFirstPet = findViewById(R.id.addpetimageview);
 
         setSupportActionBar(toolbar);
 
@@ -113,7 +102,7 @@ public class ListActivity extends AppCompatActivity {
         if (db.getCount() >= 1) {
             addFirstPet.setVisibility(View.INVISIBLE);
         }
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerViewID);
+        recyclerView = findViewById(R.id.recyclerViewID);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -148,7 +137,6 @@ public class ListActivity extends AppCompatActivity {
     }
 
 
-/////////////////////////////////
 
     public void createPopUpDialog1() {
 
@@ -157,10 +145,10 @@ public class ListActivity extends AppCompatActivity {
         dialogBuilder = new AlertDialog.Builder(this);
 
         View view = getLayoutInflater().inflate(R.layout.popup, null);
-        petNameInput = (EditText) view.findViewById(R.id.petName);
-        petBirthdayInput = (EditText) view.findViewById(R.id.petBirthday);
-        saveButton = (Button) view.findViewById(R.id.savePet);
-        imageButton = (ImageView) view.findViewById(R.id.imageButton);
+        petNameInput = view.findViewById(R.id.petName);
+        petBirthdayInput = view.findViewById(R.id.petBirthday);
+        saveButton = view.findViewById(R.id.savePet);
+        imageButton = view.findViewById(R.id.imageButton);
 
         dialogBuilder.setView(view);
         dialog = dialogBuilder.create();
@@ -175,23 +163,15 @@ public class ListActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Boolean isValidInput = util.isValidInput(petBirthdayInput.getText().toString().trim());
+                Boolean isValidInput = UtilMethods.isValidInput(petBirthdayInput.getText().toString().trim());
 
                 if (!petNameInput.getText().toString().isEmpty() && !petBirthdayInput.getText().toString().trim().isEmpty() && isValidInput) {
-                    int isValidDate = util.dateValidation(petBirthdayInput.getText().toString().trim());
+                    int isValidDate = UtilMethods.dateValidation(petBirthdayInput.getText().toString().trim());
 
                     if (isValidDate == 1) {
 
                         savePetToDB(v);
                         checkCount();
-
-                        //  recyclerViewAdapter.notifyDataSetChanged();
-
-                       /* NotificationManager notification = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
-                        Notification notify = new Notification.Builder(getApplicationContext()).setContentTitle("Hello").setContentText("hi").setSmallIcon(R.drawable.ic_launcher_foreground).build();
-                        notify.flags |= Notification.FLAG_AUTO_CANCEL;
-                        notification.notify(0,notify);*/
-
 
                     } if (isValidDate ==0) {
                         Snackbar.make(v, "Please enter a valid date  MM/DD/YYYY ", Snackbar.LENGTH_LONG).show();
@@ -199,8 +179,6 @@ public class ListActivity extends AppCompatActivity {
                     } if (isValidDate ==2) {
                         Snackbar.make(v, "Date must be before Today ", Snackbar.LENGTH_LONG).show();
                     }
-
-
 
                 } else
 
@@ -259,7 +237,7 @@ public class ListActivity extends AppCompatActivity {
         Pet pet = new Pet();
 
         //trim and capitalize inputs and refactor
-        String newPetData = util.capitalizeFirstLetter(petNameInput.getText().toString().trim());
+        String newPetData = UtilMethods.capitalizeFirstLetter(petNameInput.getText().toString().trim());
         String newBirthdayData = petBirthdayInput.getText().toString().trim();
 
         //set pet Information
@@ -276,7 +254,7 @@ public class ListActivity extends AppCompatActivity {
 
         if (imageResult) {
             pet.setImageURI(croppedURI.toString());
-            createdByteImage = util.byteImageFromPath(imagePathFromCropResult);
+            createdByteImage = UtilMethods.byteImageFromPath(imagePathFromCropResult);
             pet.setImageBYTE(createdByteImage);
             imageResult = false;
 
@@ -321,22 +299,6 @@ public class ListActivity extends AppCompatActivity {
                 .setAspectRatio(200, 200)
                 .start(this);
 
-        /*dialog.setOnKeyListener(new Dialog.OnKeyListener() {
-
-            @Override
-            public boolean onKey(DialogInterface arg0, int keyCode,
-                                 KeyEvent event) {
-                if (keyCode == KeyEvent.KEYCODE_BACK) {
-
-                    dialog.dismiss();
-
-
-                    return true;
-                }else {
-                    return false;
-                }
-            }
-        });*/
 
     }
 
@@ -387,10 +349,6 @@ public class ListActivity extends AppCompatActivity {
 }
 
 
-
-
-
-////////////////////////////////////
 
 
 

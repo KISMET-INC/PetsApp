@@ -1,16 +1,8 @@
 package com.example.howoldaremypets.Util;
 
-import android.content.ContentResolver;
 import android.content.ContentValues;
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.net.Uri;
 import android.text.format.DateFormat;
 import android.util.Log;
-import android.view.View;
-import android.widget.ImageView;
-
-import com.example.howoldaremypets.Data.DatabaseHandler;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
@@ -23,8 +15,6 @@ import java.util.GregorianCalendar;
 public class UtilMethods {
   //  public static Date today;
 
-  private ImageView addFirstPet;
-  private DatabaseHandler db;
 
 
 
@@ -108,18 +98,7 @@ public class UtilMethods {
 
     }
 
-    public static long ageInYears1(Calendar bday) {
-        Calendar today = Calendar.getInstance();
 
-     /*  Calendar bday1 = Calendar.getInstance();
-       bday1.setTimeInMillis(ageInMilliseconds);*/
-
-        int toDay = bday.get(Calendar.YEAR);
-        long years = toDay;
-
-
-        return years;
-    }
 
     public static int ageInYears(long ageInMilliseconds) {
         today();
@@ -130,11 +109,11 @@ public class UtilMethods {
         Calendar today1 = Calendar.getInstance();
 
         int toYear = today1.get(Calendar.YEAR);
-        int toDayOfYear = today1.get(today1.DAY_OF_YEAR);
+        int toDayOfYear = today1.get(Calendar.DAY_OF_YEAR);
 
 
         int bYear = bday1.get(Calendar.YEAR);
-        int bDayOfYear = bday1.get(bday1.DAY_OF_YEAR);
+        int bDayOfYear = bday1.get(Calendar.DAY_OF_YEAR);
 
         if (isLeapYear(toYear)){
             toDayOfYear--;
@@ -149,9 +128,6 @@ public class UtilMethods {
 
         if (toDayOfYear < bDayOfYear) {
             years--;
-
-         ///   Log.d("leap ", String.valueOf(leap)+ String.valueOf(bYear));
-            //  Log.d("b of year ", String.valueOf(bDayOfYear));
 
 
         }
@@ -169,11 +145,11 @@ public class UtilMethods {
 
         Calendar today1 = Calendar.getInstance();
 
-        int toDayOfYear = today1.get(today1.DAY_OF_YEAR);
+        int toDayOfYear = today1.get(Calendar.DAY_OF_YEAR);
         int toMonth = today1.get(Calendar.MONTH);
         int toDay = today1.get(Calendar.DATE);
 
-        int bDayOfYear = bday1.get(bday1.DAY_OF_YEAR);
+        int bDayOfYear = bday1.get(Calendar.DAY_OF_YEAR);
         int bMonth = bday1.get(Calendar.MONTH);
         int bDay = bday1.get(Calendar.DATE);
 
@@ -248,7 +224,7 @@ public class UtilMethods {
 
 
         int toYear = today1.get(Calendar.YEAR);
-        int toDayOfYear = today1.get(today1.DAY_OF_YEAR);
+        int toDayOfYear = today1.get(Calendar.DAY_OF_YEAR);
         int toMonth = today1.get(Calendar.MONTH);
         int toDay = today1.get(Calendar.DATE);
 
@@ -269,11 +245,7 @@ public class UtilMethods {
 
     public static boolean isValidInput(String dateString) {
 
-        if (dateString.matches("^[^a-zA-Z]*")) {
-            return true;
-        } else {
-            return false;
-        }
+        return dateString.matches("^[^a-zA-Z]*");
 
 
     }

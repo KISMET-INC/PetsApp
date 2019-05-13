@@ -5,24 +5,17 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.provider.SyncStateContract;
 import android.util.Log;
 
 import com.example.howoldaremypets.Model.Pet;
 import com.example.howoldaremypets.Util.Constants;
-import com.example.howoldaremypets.Util.UtilMethods;
 
-import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
 
     private Context ctxt;
-    private UtilMethods util;
-
 
     public DatabaseHandler(Context context) {
         super(context, Constants.DB_NAME, null, Constants.DB_VERSION);
@@ -132,7 +125,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 pet.setImageBYTE(cursor.getBlob(cursor.getColumnIndex(Constants.KEY_IMAGE_BYTE)));
                 pet.setImageURI(cursor.getString(cursor.getColumnIndex(Constants.KEY_IMAGE_URI)));
 
-               // pet.setImageURI(cursor.getString(cursor.getColumnIndex(Constants.KEY_IMAGE_URI)));
 
 //                Log.d("PetbytesQuery DB", pet.getImageURI().toString());
 

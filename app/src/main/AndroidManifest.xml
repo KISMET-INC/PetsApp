@@ -21,9 +21,6 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait" />
 
-        <activity android:name=".Activities.PetActivity"
-            android:launchMode="singleInstance" />
-
         <activity
             android:name=".Activities.ListActivity"
             android:label="@string/title_activity_list"

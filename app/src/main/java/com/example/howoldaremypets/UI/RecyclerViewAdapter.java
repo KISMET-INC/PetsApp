@@ -3,32 +3,26 @@ package com.example.howoldaremypets.UI;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-
-import com.example.howoldaremypets.Activities.ListActivity;
-
-import androidx.core.widget.ImageViewCompat;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.howoldaremypets.Activities.ListActivity;
 import com.example.howoldaremypets.Data.DatabaseHandler;
 import com.example.howoldaremypets.Model.Pet;
 import com.example.howoldaremypets.R;
 import com.example.howoldaremypets.Util.UtilMethods;
 
-import java.io.InputStream;
 import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
@@ -39,36 +33,25 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private AlertDialog dialog;
     private LayoutInflater inflater;
     private UtilMethods util;
-    public static final int PICK_IMAGE = 100;
-    private EditText petNameInput;
-    private EditText petBirthdayInput;
-    private androidx.appcompat.app.AlertDialog.Builder dialogBuilder;
-    private Button saveButton;
+
     private DatabaseHandler db;
-    private ImageView imageButton;
-    private static final int SELECT_PICTURE = 100;
-    private Uri pickedImageUri;
+
     private byte[] imageByte;
-    public static final int REQUEST_CODE = 1;
-    String imagePath;
+
     ListActivity listActivity = new ListActivity();
-    RecyclerViewAdapter.ViewHolder viewHolder;
-    Uri imageUri;
 
 
     public RecyclerViewAdapter(Context context, List<Pet> petListForPosition) {
         this.context = context;
         this.petListForPosition = petListForPosition;
         db = new DatabaseHandler(context);
-//        addFirstPet.findViewById(R.id.addpetimageview);
-
 
 
     }
 
     @Override
     public RecyclerViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int i) {
-        View view = (View) LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view, parent, false);
 
         return new ViewHolder(view, context);
     }
@@ -82,9 +65,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         Pet pet = petListForPosition.get(position);
 
 
-        long years = util.ageInYears(pet.getBirthdayLong());
-        long months = util.ageInMonths(pet.getBirthdayLong());
-        long days = util.ageInDays(pet.getBirthdayLong());
+        long years = UtilMethods.ageInYears(pet.getBirthdayLong());
+        long months = UtilMethods.ageInMonths(pet.getBirthdayLong());
+        long days = UtilMethods.ageInDays(pet.getBirthdayLong());
 
         Log.d("birthday", pet.getName());
 
@@ -97,7 +80,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             Bitmap bitmap = BitmapFactory.decodeByteArray(imageBYTE, 0, imageBYTE.length);
             holder.petImageIcon.setImageBitmap(bitmap);
 
-         //   Uri uri = Uri.parse(pet.getImageURI());
             Log.d("PetName", pet.getName());
         } else {
 
@@ -107,7 +89,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         }
 
 
-        String prettyDate = util.reformatDateString(pet.getBirthdayString());
+        String prettyDate = UtilMethods.reformatDateString(pet.getBirthdayString());
         String age = years + " years " + months + " months ";
 
 
@@ -126,14 +108,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public TextView petNameTextView;
         public TextView petBirthdayTextView;
-        public TextView birthdayLong;
         public Button editButton;
         public Button deleteButton;
-        public TextView petID;
         public TextView age;
         public ImageButton imageButton;
         public ImageView petImageIcon;
-        public ImageView addFirstPet;
 
 
         public int id;
@@ -143,13 +122,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
             context = cxt;
 
-            petImageIcon = (ImageView) view.findViewById(R.id.petImage);
-            imageButton = (ImageButton) view.findViewById(R.id.imageButton);
-            petNameTextView = (TextView) view.findViewById(R.id.name);
-            petBirthdayTextView = (TextView) view.findViewById(R.id.birthdayString);
-            editButton = (Button) view.findViewById(R.id.editButton);
-            deleteButton = (Button) view.findViewById(R.id.deleteButton);
-            age = (TextView) view.findViewById(R.id.age);
+            petImageIcon = view.findViewById(R.id.petImage);
+            imageButton = view.findViewById(R.id.imageButton);
+            petNameTextView = view.findViewById(R.id.name);
+            petBirthdayTextView = view.findViewById(R.id.birthdayString);
+            editButton = view.findViewById(R.id.editButton);
+            deleteButton = view.findViewById(R.id.deleteButton);
+            age = view.findViewById(R.id.age);
 
             editButton.setOnClickListener(this);
             deleteButton.setOnClickListener(this);
@@ -188,8 +167,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             inflater = LayoutInflater.from(context);
             View view = inflater.inflate(R.layout.confirmation_dialog, null);
 
-            Button noButton = (Button) view.findViewById(R.id.noButton);
-            Button yesButton = (Button) view.findViewById(R.id.yesButton);
+            Button noButton = view.findViewById(R.id.noButton);
+            Button yesButton = view.findViewById(R.id.yesButton);
 
             alertDialogBuilder.setView(view);
             dialog = alertDialogBuilder.create();
@@ -253,13 +232,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             intent.removeExtra("petImageByte");
             intent.removeExtra("petID");
             intent.removeExtra("petIndex");
-
-
-
-
-
-
-
 
         }
     }
