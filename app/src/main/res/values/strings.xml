@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">PetsApp!</string>
+    <string name="action_settings">Settings</string>
+    <string name="add_first_pet">Add First Pet</string>
+    <string name="pet_name_hint">Name</string>
+    <string name="add_your_pet">Add Your Pet</string>
+    <string name="birthday_hint">Birthday (mm/dd/yy)</string>
+    <string name="save_pet_button">Save Pet</string>
+    <string name="title_activity_list">How Old Are You?</string>
+    <string name="sure_text">Are You Sure?</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="edit_pet_title">Edit Your Pet</string>
+    <string name="edit_pet">Edit Pet</string>
+    <string name="click_to_add">Add Image Image</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="dog_eating_cake">Dog eating cake</string>
+</resources>
