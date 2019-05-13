@@ -160,8 +160,8 @@ public class ListActivity extends AppCompatActivity {
         dialog = dialogBuilder.create();
 
 
-        //Default Input for test purposes
-        petBirthdayInput.setText("12/12/2002");
+        //TODO: Default Input for test purposes
+      //  petBirthdayInput.setText("12/12/2002");
 
 
         saveButton.setOnClickListener(new View.OnClickListener() {
