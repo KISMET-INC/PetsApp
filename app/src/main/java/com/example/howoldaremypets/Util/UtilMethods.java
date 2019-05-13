@@ -95,6 +95,7 @@ public class UtilMethods {
 
 
         int toDay = today1.get(Calendar.DATE);
+
         int bDay = bday1.get(Calendar.DATE);
 
 
@@ -130,6 +131,8 @@ public class UtilMethods {
 
         int toYear = today1.get(Calendar.YEAR);
         int toDayOfYear = today1.get(today1.DAY_OF_YEAR);
+
+
         int bYear = bday1.get(Calendar.YEAR);
         int bDayOfYear = bday1.get(bday1.DAY_OF_YEAR);
 
@@ -230,6 +233,8 @@ public class UtilMethods {
 
     }
 
+    //TODO: Restrict Birthday to past
+
     public static boolean dateValidation(String dateString) {
         Date date = null;
         String[] array = dateString.split("/");
@@ -237,7 +242,20 @@ public class UtilMethods {
         int day = Integer.valueOf(array[1]);
         int year = Integer.valueOf(array[2]);
 
-        if ((month >= 0 && month <= 12) && (day >= 1 && day <= 31) && (year > 1000)) {
+
+        Calendar today1 = Calendar.getInstance();
+        Calendar dateInput = Calendar.getInstance();
+        dateInput.setTime(stringToDate(dateString));
+
+
+        int toYear = today1.get(Calendar.YEAR);
+        int toDayOfYear = today1.get(today1.DAY_OF_YEAR);
+        int toMonth = today1.get(Calendar.MONTH);
+        int toDay = today1.get(Calendar.DATE);
+
+        boolean isDateBefore = today1.after(dateInput);
+
+        if ((month >= 0 && month <= 12) && (day >= 1 && day <= 31) && (year > 1000 && year <=toYear ) && isDateBefore) {
             return true;
 
         } else {
