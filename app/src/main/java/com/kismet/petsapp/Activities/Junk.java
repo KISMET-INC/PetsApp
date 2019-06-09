@@ -1,14 +1,4 @@
-package com.example.howoldaremypets.Activities;
-
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-
-import com.example.howoldaremypets.R;
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.appcompat.app.AlertDialog;
+package com.kismet.petsapp.Activities;
 
 public class Junk {
 

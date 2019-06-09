@@ -1,11 +1,6 @@
-package com.example.howoldaremypets.Model;
+package com.kismet.petsapp.Model;
 
-import android.net.Uri;
-import android.util.Log;
-
-import com.example.howoldaremypets.Util.UtilMethods;
-
-import java.io.InputStream;
+import com.kismet.petsapp.Util.UtilMethods;
 
 public class Pet {
 
@@ -32,7 +27,7 @@ public class Pet {
         this.id = id;
 
 
-       long newlong = util.stringToDate(this.getBirthdayString()).getTime();
+        long newlong = UtilMethods.stringToDate(this.getBirthdayString()).getTime();
         this.birthdayLong = newlong;
     }
 
@@ -61,7 +56,7 @@ public class Pet {
     }
 
     public long getBirthdayLong() {
-        this.birthdayLong = util.stringToDate(this.getBirthdayString()).getTime();
+        this.birthdayLong = UtilMethods.stringToDate(this.getBirthdayString()).getTime();
         return birthdayLong;
     }
 

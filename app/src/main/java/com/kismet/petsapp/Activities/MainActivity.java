@@ -1,4 +1,4 @@
-package com.example.howoldaremypets.Activities;
+package com.kismet.petsapp.Activities;
 
 import android.Manifest;
 import android.app.Activity;
@@ -13,8 +13,8 @@ import android.widget.ProgressBar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.example.howoldaremypets.Data.DatabaseHandler;
-import com.example.howoldaremypets.R;
+import com.kismet.petsapp.Data.DatabaseHandler;
+import com.kismet.petsapp.R;
 
 
 public class MainActivity extends Activity {

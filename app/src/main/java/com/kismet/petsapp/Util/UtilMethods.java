@@ -1,4 +1,4 @@
-package com.example.howoldaremypets.Util;
+package com.kismet.petsapp.Util;
 
 import android.content.ContentValues;
 import android.text.format.DateFormat;

@@ -1,4 +1,4 @@
-package com.example.howoldaremypets.Data;
+package com.kismet.petsapp.Data;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -7,8 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import com.example.howoldaremypets.Model.Pet;
-import com.example.howoldaremypets.Util.Constants;
+import com.kismet.petsapp.Model.Pet;
+import com.kismet.petsapp.Util.Constants;
 
 import java.util.ArrayList;
 import java.util.List;

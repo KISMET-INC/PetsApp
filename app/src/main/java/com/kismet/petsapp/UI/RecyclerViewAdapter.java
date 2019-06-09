@@ -1,4 +1,4 @@
-package com.example.howoldaremypets.UI;
+package com.kismet.petsapp.UI;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -17,11 +17,11 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.howoldaremypets.Activities.ListActivity;
-import com.example.howoldaremypets.Data.DatabaseHandler;
-import com.example.howoldaremypets.Model.Pet;
-import com.example.howoldaremypets.R;
-import com.example.howoldaremypets.Util.UtilMethods;
+import com.kismet.petsapp.Activities.ListActivity;
+import com.kismet.petsapp.Data.DatabaseHandler;
+import com.kismet.petsapp.Model.Pet;
+import com.kismet.petsapp.R;
+import com.kismet.petsapp.Util.UtilMethods;
 
 import java.util.List;
 

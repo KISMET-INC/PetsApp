@@ -1,4 +1,4 @@
-package com.example.howoldaremypets.Activities;
+package com.kismet.petsapp.Activities;
 
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -20,12 +20,12 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.howoldaremypets.Data.DatabaseHandler;
-import com.example.howoldaremypets.Model.Pet;
-import com.example.howoldaremypets.R;
-import com.example.howoldaremypets.UI.RecyclerViewAdapter;
-import com.example.howoldaremypets.Util.UtilMethods;
 import com.google.android.material.snackbar.Snackbar;
+import com.kismet.petsapp.Data.DatabaseHandler;
+import com.kismet.petsapp.Model.Pet;
+import com.kismet.petsapp.R;
+import com.kismet.petsapp.UI.RecyclerViewAdapter;
+import com.kismet.petsapp.Util.UtilMethods;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 

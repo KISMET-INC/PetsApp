@@ -1,10 +1,4 @@
-package com.example.howoldaremypets.UI;
-
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
+package com.kismet.petsapp.UI;
 
 /*public class NotificationPublisher extends BroadcastReceiver {
     public static String NOTIFICATION_ID = "notification_id";
