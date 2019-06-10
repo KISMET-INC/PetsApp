@@ -163,7 +163,7 @@ public class ListActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Boolean isValidInput = UtilMethods.isValidInput(petBirthdayInput.getText().toString().trim());
+                boolean isValidInput = UtilMethods.isValidInput(petBirthdayInput.getText().toString().trim());
 
                 if (!petNameInput.getText().toString().isEmpty() && !petBirthdayInput.getText().toString().trim().isEmpty() && isValidInput) {
                     int isValidDate = UtilMethods.dateValidation(petBirthdayInput.getText().toString().trim());
@@ -302,6 +302,7 @@ public class ListActivity extends AppCompatActivity {
 
     }
 
+
     @Override
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -309,11 +310,15 @@ public class ListActivity extends AppCompatActivity {
 
         if (resultCode == 0) {
             dialog.dismiss();
+            Log.d("result", String.valueOf(resultCode));
+
 
         } else {
             if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
                 CropImage.ActivityResult result = CropImage.getActivityResult(data);
                 croppedURI = result.getUri();
+                Log.d("result", String.valueOf(resultCode));
+
 
                 if (resultCode == RESULT_OK) {
 

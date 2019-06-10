@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:id="@+id/layout_id"
-    >
+    android:id="@+id/layout_id">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -21,6 +19,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
+                android:contentDescription="@string/add_your_pet_label"
                 android:text="@string/add_your_pet"
                 android:textSize="25sp"
                 android:textStyle="italic" />
@@ -34,7 +33,7 @@
                 android:layout_marginTop="10dp"
                 android:adjustViewBounds="true"
                 android:background="@drawable/pawoutline"
-                android:contentDescription="Click to Add Photo"
+                android:contentDescription="@string/click_to_add"
                 android:scaleType="fitXY" />
 
             <TextView
@@ -43,7 +42,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/imageButton"
                 android:layout_centerInParent="true"
-                android:text="Click to Add Photo" />
+                android:contentDescription="@string/click_to_add_photo_label"
+                android:text="@string/click_to_add_photo_label" />
 
 
             <EditText
@@ -76,6 +76,7 @@
                 android:layout_below="@id/addPhoto"
                 android:layout_marginTop="46dp"
                 android:background="@color/colorAccent"
+                android:contentDescription="@string/save_pet_button"
                 android:text="@string/save_pet_button"
                 android:textColor="@android:color/background_light" />
 

@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Activities.ListActivity"
     tools:showIn="@layout/toolbar">
 
@@ -14,8 +13,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/cake4"
+        android:contentDescription="@string/pet_list"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent">
 
     </androidx.recyclerview.widget.RecyclerView>
 
@@ -23,7 +23,8 @@
         layout="@layout/add_pet_image"
         android:layout_width="285dp"
         android:layout_height="157dp"
-        app:layout_constraintRight_toRightOf="parent"
+        android:contentDescription="@string/add_first_pet"
 
-        android:visibility="visible" />
+        android:visibility="visible"
+        app:layout_constraintRight_toRightOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

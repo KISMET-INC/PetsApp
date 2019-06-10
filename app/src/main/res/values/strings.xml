@@ -15,4 +15,9 @@
     <string name="click_to_add">Add Image Image</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="dog_eating_cake">Dog eating cake</string>
+    <string name="pet_list">pet list</string>
+    <string name="name_input">name input</string>
+    <string name="birthday_input">birthday input</string>
+    <string name="click_to_add_photo_label">click to add photo label</string>
+    <string name="add_your_pet_label">add your pet label</string>
 </resources>

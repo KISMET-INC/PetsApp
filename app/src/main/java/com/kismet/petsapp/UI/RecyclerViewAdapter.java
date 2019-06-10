@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,7 +24,11 @@ import com.kismet.petsapp.Model.Pet;
 import com.kismet.petsapp.R;
 import com.kismet.petsapp.Util.UtilMethods;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.List;
+
+import static androidx.constraintlayout.widget.Constraints.TAG;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
@@ -49,9 +54,30 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     }
 
+    public static void makeOptionalFitsSystemWindows(View view) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            try {
+                // We need to use getMethod() for makeOptionalFitsSystemWindows since both View
+                // and ViewGroup implement the method
+                Method method = view.getClass().getMethod("makeOptionalFitsSystemWindows");
+                if (!method.isAccessible()) {
+                    method.setAccessible(true);
+                }
+                method.invoke(view);
+            } catch (NoSuchMethodException e) {
+                Log.d(TAG, "Could not find method makeOptionalFitsSystemWindows. Oh well...");
+            } catch (InvocationTargetException e) {
+                Log.d(TAG, "Could not invoke makeOptionalFitsSystemWindows", e);
+            } catch (IllegalAccessException e) {
+                Log.d(TAG, "Could not invoke makeOptionalFitsSystemWindows", e);
+            }
+        }
+    }
+
     @Override
     public RecyclerViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int i) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view, parent, false);
+        makeOptionalFitsSystemWindows(view);
 
         return new ViewHolder(view, context);
     }
