@@ -32,7 +32,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loading_activity);
         db = new DatabaseHandler(this);
-
        verifyPermissions();
 
 
@@ -41,7 +40,6 @@ public class MainActivity extends Activity {
        } else {
            verifyPermissions();
        }
-
 
 
     }

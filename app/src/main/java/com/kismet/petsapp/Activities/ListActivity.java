@@ -1,11 +1,15 @@
 package com.kismet.petsapp.Activities;
 
 import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -26,8 +30,6 @@ import com.kismet.petsapp.Model.Pet;
 import com.kismet.petsapp.R;
 import com.kismet.petsapp.UI.RecyclerViewAdapter;
 import com.kismet.petsapp.Util.UtilMethods;
-import com.theartofdev.edmodo.cropper.CropImage;
-import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -64,6 +66,7 @@ public class ListActivity extends AppCompatActivity {
     String imagePathFromCropResult;
     private Bundle bundle = new Bundle();
     int petIndex;
+    private Context context;
 
 
     @Override
@@ -85,6 +88,7 @@ public class ListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.toolbar);
         listActivty = this;
+        context = this;
 
 
         toolbar = findViewById(R.id.toolbar1);
@@ -294,53 +298,124 @@ public class ListActivity extends AppCompatActivity {
     }
 
     private void openGallery() {
-        CropImage.activity()
-                .setGuidelines(CropImageView.Guidelines.ON)
-                .setAspectRatio(200, 200)
-                .start(this);
+        final CharSequence[] options = {"Take Photo", "Choose from Gallery", "Cancel"};
 
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Choose your profile picture");
 
+        builder.setItems(options, new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int item) {
+
+                if (options[item].equals("Take Photo")) {
+                    Intent takePicture = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                    startActivityForResult(takePicture, 0);
+
+                } else if (options[item].equals("Choose from Gallery")) {
+                    Intent pickPhoto = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    startActivityForResult(pickPhoto, 1);
+
+                } else if (options[item].equals("Cancel")) {
+                    dialog.dismiss();
+                }
+            }
+        });
+        builder.show();
     }
 
 
     @Override
-
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode != RESULT_CANCELED) {
+            switch (requestCode) {
+                case 0:
+                    if (resultCode == RESULT_OK && data != null) {
+                        Bitmap selectedImage = (Bitmap) data.getExtras().get("data");
+                        imageButton.setImageBitmap(selectedImage);
+                    }
 
-        if (resultCode == 0) {
-            dialog.dismiss();
-            Log.d("result", String.valueOf(resultCode));
+                    break;
+                case 1:
+                    if (resultCode == RESULT_OK && data != null) {
+                        Uri selectedImage = data.getData();
+                        String[] filePathColumn = {MediaStore.Images.Media.DATA};
 
+                        if (selectedImage != null) {
+                            Cursor cursor = getContentResolver().query(selectedImage,
+                                    filePathColumn, null, null, null);
+                            if (cursor != null) {
+                                cursor.moveToFirst();
 
-        } else {
-            if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
-                CropImage.ActivityResult result = CropImage.getActivityResult(data);
-                croppedURI = result.getUri();
-                Log.d("result", String.valueOf(resultCode));
+                                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                                String picturePath = cursor.getString(columnIndex);
+                                // imageButton.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+                                File file = new File(picturePath);
+                                croppedURI = Uri.fromFile(file);
+                                imageButton.setImageURI(croppedURI);
+                                imagePathFromCropResult = file.getAbsolutePath();
+                                imageResult = true;
+                                cursor.close();
+                            }
+                        }
 
-
-                if (resultCode == RESULT_OK) {
-
-                    Log.d("result", String.valueOf(resultCode));
-
-
-                    imageButton.setImageURI(croppedURI);
-                    File myFilePath = new File(croppedURI.getPath());
-                    myFilePath.getAbsolutePath();
-                    imagePathFromCropResult = myFilePath.getAbsolutePath();
-                    imageResult = true;
-
-                    Log.d("croppedURI1", imagePathFromCropResult);
-
-
-                } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
-                    Exception error = result.getError();
-                }
-
+                    }
+                    break;
             }
         }
     }
+/*    private void openGallery() {
+        CropImage.activity()
+            //    .setGuidelines(CropImageView.Guidelines.ON)
+                .setAspectRatio(200, 200)
+                .start(this);
+
+
+
+    }*/
+
+
+/*
+
+    @Override
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+            if (resultCode == 0) {
+                dialog.dismiss();
+                Log.d("result", String.valueOf(resultCode));
+
+            } else {
+                if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+                    CropImage.ActivityResult result = CropImage.getActivityResult(data);
+                    croppedURI = result.getUri();
+                    Log.d("result", String.valueOf(resultCode));
+
+
+                    if (resultCode == RESULT_OK) {
+
+                        Log.d("result", String.valueOf(resultCode));
+
+
+                        imageButton.setImageURI(croppedURI);
+                        File myFilePath = new File(croppedURI.getPath());
+                        myFilePath.getAbsolutePath();
+                        imagePathFromCropResult = myFilePath.getAbsolutePath();
+                        imageResult = true;
+
+                        Log.d("croppedURI1", imagePathFromCropResult);
+
+
+                    } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+                        Exception error = result.getError();
+                        Log.d("result", "error");
+
+                    }
+
+                }
+            }
+        }
+*/
+
 
 
     public void checkCount() {

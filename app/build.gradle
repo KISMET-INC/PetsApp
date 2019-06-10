@@ -1,19 +1,31 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('D:\\Keystore\\petsappkeystore.jks')
+            storePassword 'android'
+            keyAlias = 'key0'
+            keyPassword 'android'
+        }
+    }
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.kismet.petsapp"
-        minSdkVersion 16
+        minSdkVersion 22
         targetSdkVersion 28
         versionCode 3
         versionName "3.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.release
+        maxSdkVersion 28
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
         }
     }
     buildToolsVersion '28.0.3'
