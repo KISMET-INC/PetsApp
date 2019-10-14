@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.kismet.petsapp.Activities.ListActivity">
     <item
-        android:id="@+id/action_settings"
-        android:title="Add Pet"
+        android:id="@+id/save_notes_menuItem"
+        android:title="@string/add_pet"
         app:showAsAction="ifRoom" />
 </menu>

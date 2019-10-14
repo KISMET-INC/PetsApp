@@ -52,11 +52,10 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/title"
                 android:layout_centerInParent="true"
-                android:layout_centerVertical="true"
-                android:autofillHints=""
                 android:hint="@string/pet_name_hint"
                 android:inputType=""
-                android:paddingTop="25dp" />
+                android:paddingTop="25dp"
+                android:singleLine="true" />
 
             <EditText
                 android:id="@+id/petBirthday"
@@ -64,10 +63,10 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/petName"
                 android:layout_centerInParent="true"
-                android:autofillHints=""
                 android:hint="@string/birthday_hint"
                 android:inputType=""
-                android:paddingTop="25dp" />
+                android:paddingTop="25dp"
+                android:singleLine="true" />
 
             <Button
                 android:id="@+id/savePet"

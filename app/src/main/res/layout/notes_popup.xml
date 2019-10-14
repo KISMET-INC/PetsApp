@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_id"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="25dp">
+
+            <Button
+                android:id="@+id/saveButton_in_notes_popup"
+                android:layout_width="748dp"
+                android:layout_height="70dp"
+                android:layout_below="@id/addPhoto_in_edit_dialog"
+                android:layout_marginTop="22dp"
+                android:background="@color/colorAccent"
+                android:contentDescription="@string/save_pet_button"
+                android:text="@string/save_pet_button"
+                android:textColor="@android:color/background_light" />
+
+
+            <EditText
+                android:id="@+id/petBirthday_in_notes_popup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/petName_in_notes_popup"
+                android:layout_centerInParent="true"
+                android:hint="@string/birthday_hint"
+                android:inputType=""
+                android:paddingTop="25dp"
+                android:singleLine="true"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/pet_weight_in_notes_popup"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/petBirthday_in_notes_popup"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="3dp"
+                android:hint="Weight "
+                android:inputType=""
+                android:paddingTop="25dp"
+                android:singleLine="true"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:visibility="visible" />
+
+            <EditText
+                android:id="@+id/petName_in_notes_popup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title_in_edit_dialog"
+                android:layout_centerInParent="true"
+                android:hint="@string/pet_name_hint"
+                android:inputType=""
+                android:paddingTop="25dp"
+                android:singleLine="true"
+                android:textSize="18sp" />
+
+            <ImageButton
+                android:id="@+id/pet_Image_in_notes_popup_ImageButton"
+                android:layout_width="179dp"
+                android:layout_height="163dp"
+                android:layout_below="@id/pet_weight_in_notes_popup"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/pawoutline"
+                android:contentDescription="@string/click_to_add"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:id="@+id/title_in_edit_dialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@string/add_your_pet_label"
+                android:text="@string/add_your_pet"
+                android:textSize="25sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/addPhoto_in_edit_dialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pet_Image_in_notes_popup_ImageButton"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/click_to_add_photo_label"
+                android:text="@string/click_to_add_photo_label" />
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/petBirthday_in_notes_popup"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="3dp"
+                android:layout_toRightOf="@id/pet_weight_in_notes_popup"
+                android:inputType=""
+                android:paddingTop="25dp"
+                android:singleLine="true"
+                android:text=" lbs"
+                android:textSize="18sp"
+                android:visibility="visible" />
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

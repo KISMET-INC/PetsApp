@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TableRow
+            android:id="@+id/records_activity_deleteButton_TableRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true">
+
+            <Button
+                android:id="@+id/records_activity_delete_Button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="right"
+                android:background="@android:drawable/ic_delete" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/records_activity_TextView_TableRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true">
+
+            <TextView
+                android:id="@+id/record_recyclerRow_TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="TextView"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp" />
+        </TableRow>
+
+    </LinearLayout>
+
+</LinearLayout>

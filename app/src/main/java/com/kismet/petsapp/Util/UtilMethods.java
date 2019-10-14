@@ -1,34 +1,57 @@
 package com.kismet.petsapp.Util;
 
 import android.content.ContentValues;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.text.format.DateFormat;
 import android.util.Log;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class UtilMethods {
-  //  public static Date today;
+    //  public static Date today;
 
 
+    public static int ageInYears(long ageInMilliseconds) {
+        today();
+
+        Calendar bday1 = Calendar.getInstance();
+        bday1.setTimeInMillis(ageInMilliseconds);
+
+        Calendar today1 = Calendar.getInstance();
+
+        int toYear = today1.get(Calendar.YEAR);
+        int toDayOfYear = today1.get(Calendar.DAY_OF_YEAR);
 
 
-    public byte[] getBytes(InputStream inputStream) throws IOException {
+        int bYear = bday1.get(Calendar.YEAR);
+        int bDayOfYear = bday1.get(Calendar.DAY_OF_YEAR);
 
-        ByteArrayOutputStream byteBuffer = new ByteArrayOutputStream();
-        int bufferSize = 1024;
-        byte[] buffer = new byte[bufferSize];
-
-        int len = 0;
-        while ((len = inputStream.read(buffer)) != -1) {
-            byteBuffer.write(buffer, 0, len);
+        if (isLeapYear(toYear)) {
+            toDayOfYear--;
         }
-        return byteBuffer.toByteArray();
+        if (isLeapYear(bYear)) {
+            toDayOfYear++;
+        }
+
+        int years = toYear - bYear;
+
+        // boolean leap = isLeapYear(bYear);
+
+        if (toDayOfYear < bDayOfYear) {
+            years--;
+
+
+        }
+
+
+        return years;
+
     }
 
     public static byte[] byteImageFromPath(String imagePath) {
@@ -56,23 +79,6 @@ public class UtilMethods {
         return createdByteImage;
     }
 
-    public byte[] getBytesURI(InputStream inputStream) throws IOException {
-        ByteArrayOutputStream byteBuffer = new ByteArrayOutputStream();
-
-        try {
-            int bufferSize = 1024;
-            byte[] buffer = new byte[bufferSize];
-
-            int len = 0;
-            while ((len = inputStream.read(buffer)) != -1) {
-                byteBuffer.write(buffer, 0, len);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-
-        }
-        return byteBuffer.toByteArray();
-    }
 
 
     public static int ageInDays(long ageInMilliseconds) {
@@ -98,43 +104,11 @@ public class UtilMethods {
 
     }
 
+    public static String prettyDate(String stringDate) {
+        Date date1 = stringToDate(stringDate);
+        String prettyDate = dateToString(date1);
 
-
-    public static int ageInYears(long ageInMilliseconds) {
-        today();
-
-        Calendar bday1 = Calendar.getInstance();
-        bday1.setTimeInMillis(ageInMilliseconds);
-
-        Calendar today1 = Calendar.getInstance();
-
-        int toYear = today1.get(Calendar.YEAR);
-        int toDayOfYear = today1.get(Calendar.DAY_OF_YEAR);
-
-
-        int bYear = bday1.get(Calendar.YEAR);
-        int bDayOfYear = bday1.get(Calendar.DAY_OF_YEAR);
-
-        if (isLeapYear(toYear)){
-            toDayOfYear--;
-        }
-        if (isLeapYear(bYear)){
-            toDayOfYear++;
-        }
-
-        int years = toYear - bYear;
-
-       // boolean leap = isLeapYear(bYear);
-
-        if (toDayOfYear < bDayOfYear) {
-            years--;
-
-
-        }
-
-
-        return years;
-
+        return prettyDate;
     }
 
     public static int ageInMonths(long ageInMilliseconds) {
@@ -185,34 +159,37 @@ public class UtilMethods {
         return dateString;
     }
 
-
-    public static String reformatDateString(String stringDate) {
-        Date date1 = stringToDate(stringDate);
-        String prettyDate = dateToString(date1);
-
-        return prettyDate;
-    }
-
     public static Date stringToDate(String dateString) {
 
-        String[] array = dateString.split("/");
+        String date = checkBirthdayFormat(dateString);
+        Log.d("stringtodate", date);
+
+        String[] array = date.split("/");
         int month = Integer.valueOf(array[0]) - 1;
         int day = Integer.valueOf(array[1]);
         int year = Integer.valueOf(array[2]);
 
-        Date date = new GregorianCalendar(year, month, day).getTime();
+        Date newDate = new GregorianCalendar(year, month, day).getTime();
 
-        Log.d("stringtodate", String.valueOf(date));
-
-
-        return date;
+        return newDate;
 
     }
 
-
     public static int dateValidation(String dateString) {
-        Date date = null;
-        String[] array = dateString.split("/");
+
+        if (dateString.length() != 8 && (dateString.length() != 10)) {
+            Log.d("UtilMethods_ValidDate", "1");
+            Log.d("UtilMethods_ValidDate", dateString);
+            return 0; // false wrong format
+
+        } else if (dateString.length() == 10 && !dateString.contains("/")) {
+            Log.d("UtilMethods_ValidDate", "2");
+            return 0; // false wrong format
+        }
+
+        //Date date = null;
+        String date = checkBirthdayFormat(dateString);
+        String[] array = date.split("/");
         int month = Integer.valueOf(array[0]) - 1;
         int day = Integer.valueOf(array[1]);
         int year = Integer.valueOf(array[2]);
@@ -229,26 +206,49 @@ public class UtilMethods {
         int toDay = today1.get(Calendar.DATE);
 
         boolean isDateBefore = today1.after(dateInput);
-        if ((!isDateBefore)){
+
+
+        if ((!isDateBefore)) {
             return 2; //false not before
 
-        }  if ((month >= 0 && month <= 12) && (day >= 1 && day <= 31) && (year > 1000 )) {
+        }
+        if ((month >= 0 && month <= 12) && (day >= 1 && day <= 31) && (year > 1000)) {
             return 1; // true
 
-        }
-
-        else {
-            return 0; //false
+        } else {
+            Log.d("UtilMethods_ValidDate", "3");
+            return 0; //false wrong format
         }
 
     }
 
-    public static boolean isValidInput(String dateString) {
+    public static boolean Validate_is_NumbersOnly(String dateString) {
 
         return dateString.matches("^[^a-zA-Z]*");
 
 
     }
+
+    public static String dateSeperator(String date) {
+
+        if (!date.contains("/")) {
+            String month = date.substring(0, 2);
+            String day = date.substring(2, 4);
+            String year = date.substring(4, 8);
+            return month + "/" + day + "/" + year;
+
+        } else
+            return date;
+    }
+
+    public static String checkBirthdayFormat(String petBirthdayInput) {
+        if (petBirthdayInput.length() == 8) {
+            return dateSeperator(petBirthdayInput);
+
+        } else if (petBirthdayInput.length() == 10 && petBirthdayInput.contains("/")) ;
+        return petBirthdayInput;
+    }
+
 
     public static String capitalizeFirstLetter(String nameString) {
         String firstLetter = nameString.substring(0, 1).toUpperCase();
@@ -271,7 +271,44 @@ public class UtilMethods {
         return false;
     }
 
+    public static String prettyAgeString(long years, long months) {
 
+        String age = years + " years " + months + " months";
+        return age;
+
+    }
+
+    public static Bitmap bitmapFromByte(byte[] imageByteArray) {
+        Bitmap petImageBitmapFromByte = BitmapFactory.decodeByteArray(imageByteArray, 0, imageByteArray.length);
+
+        return petImageBitmapFromByte;
+    }
+
+    public static String birthdayStringToPrettyAge(String birthdayStringInput) {
+
+        String seperatedStringInput = dateSeperator(birthdayStringInput);
+        Date date = stringToDate(seperatedStringInput);
+        long milliseconds = dateToMilliseconds(date);
+        long years = ageInYears(milliseconds);
+        long months = ageInMonths(milliseconds);
+        String prettyAgeString = prettyAgeString(years, months);
+        return prettyAgeString;
+
+
+    }
+
+    private static long dateToMilliseconds(Date date) {
+        return date.getTime();
+
+    }
+
+    public byte[] bmpToByteArray(Bitmap bmp) {
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        byte[] byteArray = stream.toByteArray();
+        return byteArray;
+    }
 }
+
 
 

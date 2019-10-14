@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/add_record_menuItem"
+        android:title="Add a Record"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/go_Back_menuItem"
+        android:title="Go Back"
+        app:showAsAction="ifRoom" />
+</menu>

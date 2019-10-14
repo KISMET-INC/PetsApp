@@ -7,18 +7,21 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.kismet.petsapp.Activities.AddPetRecordActivity;
 import com.kismet.petsapp.Activities.ListActivity;
+import com.kismet.petsapp.Activities.PetNotesActivity;
 import com.kismet.petsapp.Data.DatabaseHandler;
 import com.kismet.petsapp.Model.Pet;
 import com.kismet.petsapp.R;
@@ -33,7 +36,7 @@ import static androidx.constraintlayout.widget.Constraints.TAG;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     private Context context;
-    private List<Pet> petListForPosition;
+    public List<Pet> petListForPosition;
     private AlertDialog.Builder alertDialogBuilder;
     private AlertDialog dialog;
     private LayoutInflater inflater;
@@ -42,8 +45,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private DatabaseHandler db;
 
     private byte[] imageByte;
+    private String ageInYears;
 
     ListActivity listActivity = new ListActivity();
+
 
 
     public RecyclerViewAdapter(Context context, List<Pet> petListForPosition) {
@@ -115,13 +120,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         }
 
 
-        String prettyDate = UtilMethods.reformatDateString(pet.getBirthdayString());
-        String age = years + " years " + months + " months ";
+        String prettyDate = UtilMethods.prettyDate(pet.getBirthdayString());
+        ageInYears = UtilMethods.prettyAgeString(years, months);
 
 
         holder.petNameTextView.setText(pet.getName());
         holder.petBirthdayTextView.setText(prettyDate);
-        holder.age.setText(age);
+        holder.age.setText(ageInYears);
 
 
     }
@@ -138,7 +143,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public Button deleteButton;
         public TextView age;
         public ImageButton imageButton;
-        public ImageView petImageIcon;
+        public ImageButton petImageIcon;
+        public RelativeLayout cardView;
+        public Button recordsButton;
+
 
 
         public int id;
@@ -152,12 +160,20 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             imageButton = view.findViewById(R.id.imageButton);
             petNameTextView = view.findViewById(R.id.name);
             petBirthdayTextView = view.findViewById(R.id.birthdayString);
-            editButton = view.findViewById(R.id.editButton);
             deleteButton = view.findViewById(R.id.deleteButton);
-            age = view.findViewById(R.id.age);
+            recordsButton = view.findViewById(R.id.records_button_cardView);
 
-            editButton.setOnClickListener(this);
+            age = view.findViewById(R.id.age);
+            cardView = view.findViewById(R.id.cardView_layout);
+
+
+
             deleteButton.setOnClickListener(this);
+            recordsButton.setOnClickListener(this);
+            petImageIcon.setOnClickListener(this);
+            cardView.setOnClickListener(this);
+
+
 
 
         }
@@ -165,11 +181,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         @Override
         public void onClick(View v) {
             switch (v.getId()) {
-                case R.id.editButton:
+
+                case R.id.records_button_cardView:
                     int position = getAdapterPosition();
                     Pet pet = petListForPosition.get(position);
-                    editPet(pet);
 
+                    Intent intent = new Intent(v.getContext(), AddPetRecordActivity.class);
+                    Bundle bundle = new Bundle();
+                    //  bundle.putInt("recordID", getAdapterPosition());
+                    bundle.putInt("petID", pet.getId());
+
+                    intent.putExtras(bundle);
+                    v.getContext().startActivity(intent);
                     break;
 
                 case R.id.deleteButton:
@@ -179,6 +202,34 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
 
                         Log.d("Item 3id :", String.valueOf(pet.getId()));
+
+                    break;
+
+                case R.id.petImage:
+                case R.id.cardView_layout:
+                    position = getAdapterPosition();
+                    pet = petListForPosition.get(position);
+
+                    intent = new Intent(v.getContext(), PetNotesActivity.class);
+                    Bundle extras = new Bundle();
+                    extras.putInt("petID", pet.getId());
+                    extras.putString("petName", pet.getName());
+                    extras.putString("petAge", ageInYears);
+                    //Log.d("RecycleViewAdapter", pet.getNotes());
+
+                    if (pet.getImageBYTE() != null) {
+                        extras.putByteArray("petImageByteArray", pet.getImageBYTE());
+                    }
+
+                    if (pet.getNotes() != null) {
+                        extras.putString("petNotes", pet.getNotes());
+
+                    }
+
+                    intent.putExtras(extras);
+                    v.getContext().startActivity(intent);
+
+                    Log.d("Item 3id :", String.valueOf(pet.getId()));
 
                     break;
 
@@ -217,7 +268,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
                     Log.d("position:", String.valueOf(getAdapterPosition()));
 
-                    db.deletePet(id);
+                    db.deletePetEverythig(id);
                     petListForPosition.remove(getAdapterPosition());
                     notifyItemRemoved(getAdapterPosition());
                     db.close();
@@ -237,7 +288,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
             listActivity = ListActivity.getInstance();
 
-
             Intent intent = listActivity.getIntent();
             intent.putExtra("petName", pet.getName());
             intent.putExtra("petBirthday", pet.getBirthdayString());
@@ -250,7 +300,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             Log.d("adapterID", String.valueOf(pet.getImageURI()));
 
             context.startActivity(intent);
-            listActivity.createPopUpDialog1();
+            listActivity.addPetPopupDialog();
 
             intent.removeExtra("petName");
             intent.removeExtra("petBirthday");
@@ -258,9 +308,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             intent.removeExtra("petImageByte");
             intent.removeExtra("petID");
             intent.removeExtra("petIndex");
-
         }
     }
 }
 
 
+//TODO: Search Only for jPGS

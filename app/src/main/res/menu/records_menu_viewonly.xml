@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/edit_record_viewonly_menuItem"
+        android:title="EDIT RECORD"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/recycleView_menuItem_goback"
+        android:title="Go Back"
+        app:showAsAction="ifRoom" />
+</menu>

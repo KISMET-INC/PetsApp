@@ -12,8 +12,8 @@ public class Pet {
     private int id;
     private String imageURI;
     private byte[] imageBYTE;
-
-
+    private String notes;
+    private String weight;
 
     public Pet() {
         this.imageURI = null;
@@ -21,14 +21,12 @@ public class Pet {
 
     }
 
-    public Pet(String name, String birthdayString, int id) {
-        this.name = name;
-        this.birthdayString = birthdayString;
-        this.id = id;
+    public String getWeight() {
+        return weight;
+    }
 
-
-        long newlong = UtilMethods.stringToDate(this.getBirthdayString()).getTime();
-        this.birthdayLong = newlong;
+    public void setWeight(String weight) {
+        this.weight = weight;
     }
 
     public String getName() {
@@ -81,6 +79,11 @@ public class Pet {
     }
 
 
+    public String getNotes() {
+        return notes;
+    }
 
-
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
 }

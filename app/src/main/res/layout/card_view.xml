@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
@@ -9,14 +8,16 @@
     android:padding="1dp">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:clickable="true"
         app:cardCornerRadius="10dp">
 
         <RelativeLayout
+            android:id="@+id/cardView_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:clickable="true"
             android:padding="15dp">
 
             <TextView
@@ -61,12 +62,14 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/editButton"
+                    android:id="@+id/records_button_cardView"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginRight="5dp"
-                    android:background="@drawable/pencil" />
-<!--
+                    android:background="@drawable/records"
+                    android:fitsSystemWindows="false"
+                    android:translationX="-3dp" />
+
+                <!--
                     android:background="@drawable/pencil" />
 -->
 
@@ -86,12 +89,16 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="0dp"
                 android:layout_marginBottom="-34dp"
+                android:background="#FFFFFF"
                 android:orientation="vertical">
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/petImage"
-                    android:layout_width="match_parent"
-                    android:layout_height="72dp"
+                    android:layout_width="94dp"
+                    android:layout_height="94dp"
+                    android:scaleType="centerCrop"
+                    android:translationX="-10dp"
+                    android:translationY="-10dp"
                     app:srcCompat="@drawable/paw" />
             </TableRow>
 

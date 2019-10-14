@@ -13,17 +13,24 @@ import android.widget.ProgressBar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.kismet.petsapp.Data.DatabaseHandler;
 import com.kismet.petsapp.R;
+
+import static com.kismet.petsapp.Util.Constants.REQUEST_CODE;
 
 
 public class MainActivity extends Activity {
-    private DatabaseHandler db;
+
+    //TODO : Find out why certain images dont work
+    //TODO: Limit images to be selected in Gallery
+    //TODO: Allow reordering of Recycle View items
+    //TODO: Figure out how to make AutoBackup work
+    //TODO: Make it so image cropper doesnt go too far back when back button is pressed.
+
+    //Declare Progress bar elements
     private ProgressBar progressBar;
     private int progressStatus = 0;
     private Handler handler = new Handler();
 
-    public static final int REQUEST_CODE = 1;
 
 
 
@@ -31,37 +38,29 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loading_activity);
-        db = new DatabaseHandler(this);
-       verifyPermissions();
 
+        //Run verify permissios function
+        verifyPermissions();
 
+        //if permissions verified, continue loading
         if(permissionsVerified()){
            loader();
+
        } else {
+            //if permissions not verified, restart function. Permissions must be granted
+            //to move forward in program
            verifyPermissions();
        }
-
-
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }

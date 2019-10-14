@@ -24,17 +24,16 @@
                 android:textSize="25sp"
                 android:textStyle="italic" />
 
-            <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_below="@id/petBirthday"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="10dp"
-                android:adjustViewBounds="true"
-                android:background="@drawable/pawoutline"
-                android:contentDescription="@string/click_to_add"
-                android:scaleType="fitXY" />
+            <Button
+                android:id="@+id/savePet"
+                android:layout_width="748dp"
+                android:layout_height="70dp"
+                android:layout_below="@id/addPhoto"
+                android:layout_marginTop="14dp"
+                android:background="@color/colorAccent"
+                android:contentDescription="@string/save_pet_button"
+                android:text="@string/save_pet_button"
+                android:textColor="@android:color/background_light" />
 
             <TextView
                 android:id="@+id/addPhoto"
@@ -54,7 +53,8 @@
                 android:layout_centerInParent="true"
                 android:hint="@string/pet_name_hint"
                 android:inputType=""
-                android:paddingTop="25dp" />
+                android:paddingTop="25dp"
+                android:singleLine="true" />
 
             <EditText
                 android:id="@+id/petBirthday"
@@ -66,16 +66,17 @@
                 android:inputType=""
                 android:paddingTop="25dp" />
 
-            <Button
-                android:id="@+id/savePet"
-                android:layout_width="748dp"
-                android:layout_height="70dp"
-                android:layout_below="@id/addPhoto"
-                android:layout_marginTop="46dp"
-                android:background="@color/colorAccent"
-                android:contentDescription="@string/save_pet_button"
-                android:text="@string/save_pet_button"
-                android:textColor="@android:color/background_light" />
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="156dp"
+                android:layout_height="135dp"
+                android:layout_below="@id/petBirthday"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/pawoutline"
+                android:contentDescription="@string/click_to_add"
+                android:scaleType="fitXY" />
 
 
         </RelativeLayout>
