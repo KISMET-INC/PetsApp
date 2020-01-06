@@ -1,0 +1,9 @@
+<application>
+  <component name="FindSettings">
+    <option name="customScope" value="Project 'AndroidStudio'" />
+    <option name="defaultScopeName" value="Project 'AndroidStudio'" />
+    <option name="skipResultsWithOneUsage" value="true" />
+    <option name="SKIP_RESULTS_WHEN_ONE_USAGE" value="true" />
+    <option name="SEARCH_SCOPE" value="Project 'AndroidStudio'" />
+  </component>
+</application>
