@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -92,7 +93,12 @@ public class PetNotesActivity extends AppCompatActivity {
                 Log.d("PetNoteAct", "hello");
                 Intent intent = new Intent(PetNotesActivity.this, AddPetRecordActivity.class);
                 intent.putExtra("petID", petCreatedFromDatabase.getId());
+                //ListAct(RecycleViewAdapter = 1, PetNotesActivity = 2,
+                intent.putExtra("where", 2);
                 startActivity(intent);
+                finish();
+                break;
+            case R.id.go_back_notes_activity_menuItem:
                 finish();
                 break;
 
@@ -395,6 +401,11 @@ public class PetNotesActivity extends AppCompatActivity {
         if (pet.getImageBYTE() != null) {
             Bitmap reconstructedPetImageFromRecyclerAdapter = UtilMethods.bitmapFromByte(petCreatedFromDatabase.getImageBYTE());
             petImageButton.setImageBitmap(reconstructedPetImageFromRecyclerAdapter);
+            //  petImageButton.setImageURI(Uri.parse(pet.getImageURI()));
+        } else {
+            petImageButton.setImageBitmap(BitmapFactory.decodeResource(this.getResources(),
+                    R.drawable.paw3));
+            //petImageButton.setImageBitmap(null);
         }
     }
 
@@ -597,11 +608,15 @@ public class PetNotesActivity extends AppCompatActivity {
         Pet pet = new Pet();
         pet = petRecordsDatabase.getPet(petID);
 
+        // Log.d("petURI", pet.getImageURI());
+
 
         if (petRecordsDatabase.getPetWeight(petID) != null) {
             pet.setWeight(petRecordsDatabase.getPetWeight(petID));
             pet.setNotes(petRecordsDatabase.getNotesFromDatabase(petID));
+
         }
+
 
         return pet;
 

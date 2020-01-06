@@ -22,7 +22,9 @@
         <activity android:name=".Activities.PhotoView"></activity>
 
 
-        <activity android:name=".Activities.AddPetRecordActivity" />
+        <activity
+            android:name=".Activities.AddPetRecordActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.ListActivity"
             android:label="@string/title_activity_list"

@@ -5,11 +5,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/saveRecord_popup_Button"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="SAVE" />
+        android:layout_height="45dp"
+        android:gravity="center_vertical"
+        android:text="Add A Record"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/addRecord_popup_EditText"
@@ -22,12 +25,10 @@
         android:textAlignment="center"
         android:textSize="14sp" />
 
-    <TextView
+    <Button
+        android:id="@+id/saveRecord_popup_Button"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:gravity="center_vertical"
-        android:text="Add A Record"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:layout_height="wrap_content"
+        android:text="SAVE" />
+
 </LinearLayout>

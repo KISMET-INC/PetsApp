@@ -20,7 +20,7 @@ import static com.kismet.petsapp.Util.Constants.REQUEST_CODE;
 
 public class MainActivity extends Activity {
 
-    //TODO : Find out why certain images dont work
+
     //TODO: Limit images to be selected in Gallery
     //TODO: Allow reordering of Recycle View items
     //TODO: Figure out how to make AutoBackup work

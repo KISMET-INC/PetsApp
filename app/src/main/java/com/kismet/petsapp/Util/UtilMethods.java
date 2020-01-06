@@ -3,12 +3,16 @@ package com.kismet.petsapp.Util;
 import android.content.ContentValues;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.text.format.DateFormat;
 import android.util.Log;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.sql.Blob;
+import java.sql.ResultSet;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -16,6 +20,34 @@ import java.util.GregorianCalendar;
 public class UtilMethods {
     //  public static Date today;
 
+    public static byte[] resultBlobToByte(ResultSet rs) {
+        byte[] blobAsBytes = null;
+        try {
+            Blob blob = rs.getBlob("SomeDatabaseField");
+
+            int blobLength = (int) blob.length();
+            blobAsBytes = blob.getBytes(1, blobLength);
+
+//release the blob and free up memory. (since JDBC 4.0)
+            blob.free();
+
+
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+        }
+
+        return blobAsBytes;
+    }
+
+
+    public static String getCropResultAbsolutePathString(Uri croppedURI) {
+        File myFilePath = new File(croppedURI.getPath());
+        //myFilePath.getAbsolutePath();
+        String imagePathFromCropResult;
+
+        return imagePathFromCropResult = myFilePath.getAbsolutePath();
+
+    }
 
     public static int ageInYears(long ageInMilliseconds) {
         today();

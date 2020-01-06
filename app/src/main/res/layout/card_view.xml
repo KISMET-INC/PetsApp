@@ -24,7 +24,7 @@
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingLeft="75dp"
+                android:paddingLeft="90dp"
                 android:text="@string/pet_name_hint"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/name"
-                android:paddingLeft="75dp"
+                android:paddingLeft="90dp"
                 android:paddingTop="5dp"
                 android:text="Birthday"
                 android:textStyle="italic" />
@@ -46,7 +46,7 @@
 
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/birthdayString"
-                android:paddingLeft="75dp"
+                android:paddingLeft="90dp"
                 android:paddingTop="5dp"
                 android:text="Age"
 
@@ -67,7 +67,8 @@
                     android:layout_height="30dp"
                     android:background="@drawable/records"
                     android:fitsSystemWindows="false"
-                    android:translationX="-3dp" />
+                    android:translationX="-3dp"
+                    android:visibility="invisible" />
 
                 <!--
                     android:background="@drawable/pencil" />

@@ -36,13 +36,15 @@
 
             <CheckBox
                 android:id="@+id/filename_editWhat_CheckBox"
-                android:layout_width="188dp"
-                android:layout_height="65dp"
+                android:layout_width="199dp"
+                android:layout_height="64dp"
                 android:layout_below="@id/filename_editWhat_TextView"
                 android:layout_centerInParent="true"
+                android:layout_centerHorizontal="false"
+                android:layout_centerVertical="true"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="Filename"
-                android:textAlignment="textStart"
+
                 android:textSize="18sp" />
 
             <TextView

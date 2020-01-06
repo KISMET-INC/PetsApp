@@ -61,6 +61,15 @@ public class AddPetRecordActivity extends AppCompatActivity implements com.kisme
         //Go Back and Add Record Menu items
         switch (item.getItemId()) {
             case R.id.go_Back_menuItem:
+                int where = bundle.getInt("where");
+                //ListAct(RecycleViewAdapter = 1, PetNotesActivity = 2,
+                if (where == 2) {
+                    Intent intent = new Intent(this, PetNotesActivity.class);
+                    bundle.putInt("petID", petID);
+                    intent.putExtras(bundle);
+                    startActivity(intent);
+
+                }
                 this.finish();
                 break;
             case R.id.add_record_menuItem:
@@ -144,8 +153,9 @@ public class AddPetRecordActivity extends AppCompatActivity implements com.kisme
 
             //get the record ID from the bundle
             recordID = bundle.getInt("recordID");
+            int adjustedRecordID = recordID + 1;
             //get the filename of this record from teh database and hold in filename variable
-            filename = databaseHandler1.getRecord_FROMDatabase(recordID);
+            filename = databaseHandler1.getRecord_FROMDatabase(adjustedRecordID);
 
             openGallery(this);
         } // END FUNCTION TO RUN FOR EDITING ONLY
@@ -165,11 +175,13 @@ public class AddPetRecordActivity extends AppCompatActivity implements com.kisme
     public void openGallery(Activity activity) {
         CropImage.activity()
                 .setGuidelines(CropImageView.Guidelines.ON)
+                .setInitialCropWindowPaddingRatio(0)
                 .start(activity);
 
 
     }
 
+    //TODO Add Time to Records, Search filenames for already exists, Dont allow spaces, allow sorting of records
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

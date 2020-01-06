@@ -29,6 +29,7 @@ public class MY_RecycleViewAdapter2 extends RecyclerView.Adapter<MY_RecycleViewA
     private MY_ItemClickListener clickListener;
 
     private int position1;
+    private String record;
     private DatabaseHandler db;
 
 
@@ -49,8 +50,8 @@ public class MY_RecycleViewAdapter2 extends RecyclerView.Adapter<MY_RecycleViewA
 
     @Override
     public void onBindViewHolder(MY_ViewHolder holder, int position) {
-        String record = entryPositionList.get(position);
-        Log.d("MyRecycle", String.valueOf(record));
+        record = entryPositionList.get(position);
+        Log.d("MyRecycle", record);
         holder.myTextView.setText(record);
         position1 = position;
 
@@ -83,12 +84,14 @@ public class MY_RecycleViewAdapter2 extends RecyclerView.Adapter<MY_RecycleViewA
         TextView myTextView;
         Button deleteRecordButton;
         TableRow recordName;
+        //  TextView recordDate;
 
         MY_ViewHolder(View itemView) {
             super(itemView);
             myTextView = itemView.findViewById(R.id.record_recyclerRow_TextView);
             deleteRecordButton = itemView.findViewById(R.id.records_activity_delete_Button);
             recordName = itemView.findViewById(R.id.records_activity_TextView_TableRow);
+            //     recordDate = itemView.findViewById(R.id.recordDate_recyclerRow_TextView);
 
 
             // itemView.setOnClickListener(this);
@@ -99,7 +102,7 @@ public class MY_RecycleViewAdapter2 extends RecyclerView.Adapter<MY_RecycleViewA
         @Override
         public void onClick(View view) {
             int string = getAdapterPosition();
-            entryPositionList.indexOf(getAdapterPosition());
+            String name = entryPositionList.get(getAdapterPosition());
 
             switch (view.getId()) {
                 case R.id.records_activity_TextView_TableRow:
@@ -110,6 +113,7 @@ public class MY_RecycleViewAdapter2 extends RecyclerView.Adapter<MY_RecycleViewA
                     Bundle bundle = new Bundle();
                     bundle.putInt("recordID", getAdapterPosition());
                     bundle.putInt("petID", pet.getId());
+                    Log.d("recordIDposition", Integer.toString(getAdapterPosition()));
 
                     intent.putExtras(bundle);
                     view.getContext().startActivity(intent);
@@ -122,11 +126,11 @@ public class MY_RecycleViewAdapter2 extends RecyclerView.Adapter<MY_RecycleViewA
 
                 case R.id.records_activity_delete_Button:
 
-                    db.deletPetRecord(string + 1);
+                    db.deletPetRecord(name, pet.getId());
                     entryPositionList.remove(getAdapterPosition());
                     notifyItemRemoved(getAdapterPosition());
-                    Log.d("deletePet_Recycler", String.valueOf(string));
-
+                    Log.d("deletePet_Recycler", name);
+                    break;
 
             }
         }

@@ -4,14 +4,14 @@
     tools:context="com.kismet.petsapp.Activities.PetNotesActivity">
     <item
         android:id="@+id/save_notes_menuItem"
-        android:title="SAVE PET"
+        android:title="SAVE NOTES"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/add_pet_record_menuItem"
-        android:title="GET RECORDS"
+        android:title="RECORDS"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/go_back_notes_activity_menuItem"
         android:title="GO BACK"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
 </menu>

@@ -16,9 +16,11 @@ import java.util.List;
 import static com.kismet.petsapp.Util.Constants.KEY_ID;
 import static com.kismet.petsapp.Util.Constants.KEY_WEIGHT;
 import static com.kismet.petsapp.Util.Constants.PET_RECORD_FILENAMES;
+import static com.kismet.petsapp.Util.Constants.PET_RECORD_IMAGE_BYTES;
 import static com.kismet.petsapp.Util.Constants.PET_RECORD_IMAGE_PATHS;
 import static com.kismet.petsapp.Util.Constants.RECORD_INDEX_ID;
 import static com.kismet.petsapp.Util.Constants.TABLE2_NAME;
+import static com.kismet.petsapp.Util.UtilMethods.byteImageFromPath;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
 
@@ -27,6 +29,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private String CREATE_PET_TABLE2;
     //Declare utility variables
     private int columnNumber;
+    private int columnNumber2;
 
     //Constructor
     public DatabaseHandler(Context context) {
@@ -60,6 +63,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + PET_RECORD_FILENAMES + " TEXT);";
         db.execSQL(CREATE_PET_TABLE2);
 
+        Cursor cursor2 = db.query(Constants.TABLE2_NAME, null, null, null, null, null, null);
+        columnNumber2 = cursor2.getColumnCount();
+        cursor2.close();
+
 
         onUpgrade(db, 1, 2);
     }
@@ -75,6 +82,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         }
 
+
         //To upgrade the TABLE when needed
         if (newVersion == 2) {
             CREATE_PET_TABLE2 = "CREATE TABLE IF NOT EXISTS " + TABLE2_NAME + "("
@@ -83,6 +91,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                     + PET_RECORD_IMAGE_PATHS + " TEXT,"
                     + PET_RECORD_FILENAMES + " TEXT);";
             db.execSQL(CREATE_PET_TABLE2);
+
+            //If number of columsns in the database are the old database number of columns, add new attributes
+            if (columnNumber2 == 4) {
+                db.execSQL("ALTER TABLE " + Constants.TABLE2_NAME + " ADD COLUMN " + Constants.PET_RECORD_IMAGE_BYTES + " BLOB");
+                //    db.execSQL("ALTER TABLE " + Constants.TABLE2_NAME + " ADD COLUMN " + Constants.PET_RECORD_DATE + " TEXT");
+            }
+
         }
 
 
@@ -148,7 +163,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public Pet getPet(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
 
-        Cursor cursor = db.query(Constants.TABLE1_NAME, new String[]{KEY_ID, Constants.KEY_NAME, Constants.KEY_BDAY, Constants.KEY_IMAGE_BYTE}, KEY_ID + "=?",
+        Cursor cursor = db.query(Constants.TABLE1_NAME, new String[]{KEY_ID, Constants.KEY_NAME, Constants.KEY_BDAY, Constants.KEY_IMAGE_BYTE, Constants.KEY_IMAGE_URI}, KEY_ID + "=?",
                 new String[]{String.valueOf(id)}, null, null, null, null);
 
         if (cursor != null)
@@ -161,6 +176,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         pet.setName(cursor.getString(cursor.getColumnIndex(Constants.KEY_NAME)));
         pet.setBirthdayString(cursor.getString(cursor.getColumnIndex(Constants.KEY_BDAY)));
         pet.setImageBYTE(cursor.getBlob(cursor.getColumnIndex(Constants.KEY_IMAGE_BYTE)));
+        pet.setImageURI(cursor.getString(cursor.getColumnIndex(Constants.KEY_IMAGE_URI)));
         cursor.close();
 
         //for debugging
@@ -312,11 +328,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     }
 
-    public void deletPetRecord(int id) {
+    public void deletPetRecord(String filename, int petID) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE2_NAME, RECORD_INDEX_ID + " = ?",
-                new String[]{String.valueOf(id)});
-        Log.d("deletePetRecord", String.valueOf(id));
+        db.delete(TABLE2_NAME, PET_RECORD_FILENAMES + " = ? AND " + KEY_ID + " = ? ",
+
+                new String[]{filename, Integer.toString(petID)});
+        Log.d("deletePetRecord", filename);
         db.close();
     }
 
@@ -375,32 +392,48 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public void addRecord_toDatabase(Pet pet, String filename, String imagePath) {
         entryToDB = true;
 
-
         //convert imagePath to a byte array for entrance into database
-        //byte [] imageByteArray =  byteImageFromPath(imagePath);
+        byte[] imageByteArray = byteImageFromPath(imagePath);
 
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
         values.put(PET_RECORD_FILENAMES, filename);
-        values.put(PET_RECORD_IMAGE_PATHS, imagePath);
+        //   values.put(PET_RECORD_IMAGE_PATHS, imagePath);
         values.put(KEY_ID, pet.getId());
+        values.put(PET_RECORD_IMAGE_BYTES, imageByteArray);
 
+        // SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        // values.put(PET_RECORD_DATE, dateFormat.format(Calendar.getInstance()));
         db.insert(TABLE2_NAME, null, values);
 
         Log.d("PetaddRecord", filename);
+
+
         db.close();
 
     }
 
     public void updateRecord_toDatabase(int recordID, String filename, String imagePath) {
         SQLiteDatabase db = getWritableDatabase();
+        byte[] imageByteArray = byteImageFromPath(imagePath);
 
         ContentValues values = new ContentValues();
         values.put(PET_RECORD_FILENAMES, filename);
-        values.put(PET_RECORD_IMAGE_PATHS, imagePath);
+        values.put(PET_RECORD_IMAGE_BYTES, imageByteArray);
 
-        db.update(TABLE2_NAME, values, RECORD_INDEX_ID + "=?", new String[]{String.valueOf(recordID + 1)});
+        db.update(TABLE2_NAME, values, PET_RECORD_FILENAMES + "=?", new String[]{filename});
+        db.close();
+
+    }
+
+    public void updateRecord_toDatabase_Filename(int recordID, String old_Filename, String new_Filename) {
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(PET_RECORD_FILENAMES, new_Filename);
+
+        db.update(TABLE2_NAME, values, PET_RECORD_FILENAMES + "=?", new String[]{old_Filename});
         db.close();
 
     }
@@ -447,6 +480,28 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return getALL_ImageByteArrays_ArrayList;
     }
 
+    public ArrayList<byte[]> getALL_ImageBytes_FROMDatabase(int petID) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        ArrayList<byte[]> getALL_ImageByteArrays_ArrayList = new ArrayList<>();
+
+        Cursor cursor = db.query(TABLE2_NAME, new String[]{RECORD_INDEX_ID, KEY_ID, PET_RECORD_IMAGE_BYTES}, "id = ?", new String[]{String.valueOf(petID)}, null, null, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+
+                getALL_ImageByteArrays_ArrayList.add(cursor.getBlob(cursor.getColumnIndex(PET_RECORD_IMAGE_BYTES)));
+
+            } while (cursor.moveToNext());
+
+            cursor.close();
+            db.close();
+
+        }
+        return getALL_ImageByteArrays_ArrayList;
+    }
+
+
     public boolean entryAddedtoDB() {
 
         Log.d("entry", String.valueOf(entryToDB));
@@ -462,7 +517,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         Log.d("petRecords", String.valueOf(recordID));
 
         Cursor cursor = db.query(TABLE2_NAME, new String[]{RECORD_INDEX_ID, KEY_ID, PET_RECORD_FILENAMES}, RECORD_INDEX_ID + "=?",
-                new String[]{String.valueOf(recordID + 1)}, null, null, null, null);
+                new String[]{String.valueOf(recordID)}, null, null, null, null);
 
         if (cursor != null)
             cursor.moveToFirst();
@@ -474,4 +529,23 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return filename;
 
     }
+
+    public byte[] getRecord_FROMDatabasetoBYte(int recordID) {
+        SQLiteDatabase db = getReadableDatabase();
+        Log.d("petRecords", String.valueOf(recordID));
+
+        Cursor cursor = db.query(TABLE2_NAME, new String[]{RECORD_INDEX_ID, KEY_ID, PET_RECORD_FILENAMES, PET_RECORD_IMAGE_BYTES}, RECORD_INDEX_ID + "=?",
+                new String[]{String.valueOf(recordID + 1)}, null, null, null, null);
+
+        if (cursor != null)
+            cursor.moveToFirst();
+
+        byte[] imageByte = cursor.getBlob(cursor.getColumnIndex(PET_RECORD_IMAGE_BYTES));
+        cursor.close();
+        db.close();
+        return imageByte;
+
+    }
+
+
 } //END DATABASE HANDLER

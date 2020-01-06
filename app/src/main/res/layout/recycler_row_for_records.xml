@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="75dp"
+    android:alpha="100"
     android:orientation="vertical">
 
     <LinearLayout
@@ -27,19 +28,28 @@
         <TableRow
             android:id="@+id/records_activity_TextView_TableRow"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:clickable="true">
 
             <TextView
                 android:id="@+id/record_recyclerRow_TextView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
                 android:paddingLeft="10dp"
                 android:text="TextView"
                 android:textColor="#FFFFFF"
-                android:textSize="30sp" />
+                android:textSize="20sp" />
+
         </TableRow>
 
     </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:alpha="100"
+        android:background="?android:attr/listDivider" />
 
 </LinearLayout>

@@ -28,8 +28,8 @@ import com.kismet.petsapp.R;
 import com.kismet.petsapp.UI.RecyclerViewAdapter;
 import com.kismet.petsapp.Util.UtilMethods;
 import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -408,7 +408,7 @@ public class ListActivity extends AppCompatActivity {
     //***************************************************************************
     public void openGallery(Activity activity) {
         CropImage.activity()
-            //    .setGuidelines(CropImageView.Guidelines.ON)
+                .setGuidelines(CropImageView.Guidelines.ON)
                 .setAspectRatio(200, 200)
                 .start(activity);
     }
@@ -434,9 +434,13 @@ public class ListActivity extends AppCompatActivity {
 
 
                     imageButton.setImageURI(croppedURI);
-                    File myFilePath = new File(croppedURI.getPath());
-                    myFilePath.getAbsolutePath();
-                    imagePathFromCropResult = myFilePath.getAbsolutePath();
+
+                    //  File myFilePath = new File(croppedURI.getPath());
+                    //myFilePath.getAbsolutePath();
+
+                    //imagePathFromCropResult = myFilePath.getAbsolutePath();
+
+                    imagePathFromCropResult = UtilMethods.getCropResultAbsolutePathString(croppedURI);
                     imageResult = true;
 
                     Log.d("croppedURI1", imagePathFromCropResult);
@@ -465,6 +469,7 @@ public class ListActivity extends AppCompatActivity {
             addFirstPet.setVisibility(View.INVISIBLE);
         }
     }//END DETERMINE VISABILITY
+
 
 } //END (THIS)- LIST ACTIVITY
 

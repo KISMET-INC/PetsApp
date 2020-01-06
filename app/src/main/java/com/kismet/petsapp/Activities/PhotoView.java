@@ -1,9 +1,11 @@
 package com.kismet.petsapp.Activities;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -12,6 +14,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -35,17 +38,20 @@ public class PhotoView extends AppCompatActivity {
     private Button saveFileButton;
 
     private ArrayList<String> arrayListOfFilenames = new ArrayList<>();
+    private ArrayList<byte[]> ImageBytes_fromDatabase = new ArrayList<>();
     private Intent intent;
     private int petID;
     private Pet pet;
     private String imagePath;
-    private int recordID;
+    private int recordID_AdapterPosition;
+    private int recordID_forSearchingDatabase;
     private String filename;
     private Bundle bundle;
 
     private UtilMethods util;
 
     private Uri imageURI;
+    private Bitmap ImageBitmap;
 
     private String userCreatedFilename;
 
@@ -75,6 +81,10 @@ public class PhotoView extends AppCompatActivity {
 
         petID = bundle.getInt("petID");
         pet = databaseHandler1.getPet(petID);
+        arrayListOfFilenames = databaseHandler1.getALL_Filenames_FROMDatabase(pet);
+
+        Log.d("petID", Integer.toString(petID));
+
 
         //IF BUNDLE HAS IMAGE PATH WE ARE CREATING A BRAND NEW RECORD
         if (bundle.containsKey("ImagePath")) {
@@ -86,18 +96,29 @@ public class PhotoView extends AppCompatActivity {
         else if (bundle.containsKey("recordID")) {
             toolbarSwitch = 2;
 
-            recordID = bundle.getInt("recordID");
-            filename = databaseHandler1.getRecord_FROMDatabase(recordID);
+            recordID_AdapterPosition = bundle.getInt("recordID");
+            recordID_forSearchingDatabase = recordID_AdapterPosition + 1;
+
+            Log.d("recordID_array", arrayListOfFilenames.get(recordID_AdapterPosition));
+            Log.d("recordIDelse_position", Integer.toString(recordID_AdapterPosition));
+            filename = arrayListOfFilenames.get(recordID_AdapterPosition);
 
 
-            //Very round about way of getting the ONE IMAGE path associated with the recordID
+            //Very round about way of getting the ONE IMAGE path associated with the recordID_AdapterPosition
             //and petID TODO: Find better way to get the image path from bundle information.
             //make array list to hold all image paths for the petID sent in the bundle
-            ArrayList<String> ImagePaths_fromDatabase;
-            ImagePaths_fromDatabase = databaseHandler1.getALL_ImagePaths_FROMDatabase(petID);
+            ArrayList<String> ImagePaths_fromDatabase_ArrayList;
+            ImagePaths_fromDatabase_ArrayList = databaseHandler1.getALL_ImagePaths_FROMDatabase(petID);
+            imagePath = ImagePaths_fromDatabase_ArrayList.get(recordID_AdapterPosition);
 
+
+            ImageBytes_fromDatabase = databaseHandler1.getALL_ImageBytes_FROMDatabase(petID);
+            byte[] ImageByteArray = ImageBytes_fromDatabase.get(recordID_AdapterPosition);
+            ImageBitmap = UtilMethods.bitmapFromByte(ImageByteArray);
+
+            //Log.d("recordIDhere", ImageByteArray.toString());
             //Initialize a string imagePath to hold the path associated with a particular records id/
-            imagePath = ImagePaths_fromDatabase.get(recordID);
+
         }
 
         //IF BUNDLE CONTAINS FILE NAME WE ARE EDITING THE FILE NAME
@@ -105,11 +126,25 @@ public class PhotoView extends AppCompatActivity {
             filename = bundle.getString("filename");
         }
 
+//        Log.d("recordIDbytes", ImageBitmap.toString());
+        /////////////////////////////////////////////
+        if (ImageBitmap == null) {
+            photoView.setImageURI(Uri.parse(imagePath));
+            Log.d("recordIDhere", imagePath);
+            Log.d("recordIDhere", "nnn");
+
+        } else {
+            photoView.setImageBitmap(ImageBitmap);
+            Log.d("recordIDhere", "grr");
+            Log.d("recordIDhere", ImageBytes_fromDatabase.get(recordID_AdapterPosition).toString());
+        }
+
+
+        // photoView.setImageURI(Uri.parse(imagePath));
+
 
         /////////////////////////////////////////////
-        photoView.setImageURI(Uri.parse(imagePath));
-        /////////////////////////////////////////////
-
+        bundle.clear();
 
     }
 
@@ -135,6 +170,10 @@ public class PhotoView extends AppCompatActivity {
                 addAPetRecord();
                 break;
             case R.id.recycleView_menuItem_goback:
+                Intent intent = new Intent(this, AddPetRecordActivity.class);
+                bundle.putInt("petID", petID);
+                intent.putExtras(bundle);
+                startActivity(intent);
                 finish();
                 break;
             case R.id.edit_record_viewonly_menuItem:
@@ -172,35 +211,61 @@ public class PhotoView extends AppCompatActivity {
         saveFileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //TODO fix datavalidation for filenames
                 //Set user input into a holding string
                 userCreatedFilename = enterFilenameEditText.getText().toString().trim();
+                // Log.d("Filename2", filename);
+                // Log.d("Filename2", String.valueOf(filename.equals(userCreatedFilename)));
+                if (!arrayListOfFilenames.contains(userCreatedFilename) || filename == null || filename.equals(userCreatedFilename)) {
 
-                //IF THERE IS NO FILENAME A BRAND NEW RECORD WILL BE ADDED TO DATABASE
-                if (filename == null) {
-                    databaseHandler1.addRecord_toDatabase(pet, userCreatedFilename, imagePath);
+                    //IF THERE IS NO FILENAME A BRAND NEW RECORD WILL BE ADDED TO DATABASE
+                    if (filename == null && !arrayListOfFilenames.contains(userCreatedFilename)) {
+                        databaseHandler1.addRecord_toDatabase(pet, userCreatedFilename, imagePath);
+                        alertDialog.dismiss();
+                        finish();
 
-                }
-                else {
-                    //IF THERE IS  A FILENAME WE PROCEED TO EDIT PRE EXISTING DATABASE ENTRY
-                    //clear the bundle so there is not "straggler" data.
-                    bundle.clear();
-                    //update the record
-                    databaseHandler1.updateRecord_toDatabase(recordID, userCreatedFilename, imagePath);
+                    } else {
 
-                    //Entry has now been updated.
-                    //Send the petID in a bundle to the AddPetRecord Activity so we can "go Back where we started"
-                    Intent intent = new Intent(PhotoView.this, AddPetRecordActivity.class);
-                    bundle.putInt("petID", petID);
-                    intent.putExtras(bundle);
-                    startActivity(intent);
-                    finish();
+                        Log.d("Filename2", filename);
+                        Log.d("Filename2", userCreatedFilename);
+                        //IF THERE IS  A FILENAME WE PROCEED TO EDIT PRE EXISTING DATABASE ENTRY
+                        //clear the bundle so there is not "straggler" data.
+                        bundle.clear();
+                        //update the record
+//                    Log.d("imagePath", imagePath);
+
+                        if (imagePath != null) {
+                            databaseHandler1.updateRecord_toDatabase(recordID_forSearchingDatabase, userCreatedFilename, imagePath);
+                            Log.d("Filename1", userCreatedFilename);
+                        } else {
+                            Log.d("Filename2", Integer.toString(recordID_forSearchingDatabase));
+                            Log.d("Filename2", filename);
+                            Log.d("Filename2", userCreatedFilename);
+                            databaseHandler1.updateRecord_toDatabase_Filename(recordID_forSearchingDatabase, filename, userCreatedFilename);
+                        }
+                        //Entry has now been updated.
+                        //Send the petID in a bundle to the AddPetRecord Activity so we can "go Back where we started"
+                        Intent intent = new Intent(PhotoView.this, AddPetRecordActivity.class);
+                        bundle.putInt("petID", petID);
+                        intent.putExtras(bundle);
+                        startActivity(intent);
+                        alertDialog.dismiss();
+                        finish();
+                    }
+
+
+                } else {
+                    Toast toast = Toast.makeText(getApplicationContext(), "A file with this name already exists, please pick another.", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.TOP, 0, -10);
+                    toast.show();
+                    Log.d("Exist", "filename already exists");
                 }
 
                 //the default end to this function
-                alertDialog.dismiss();
-                finish();
+
+
             }
+
         });
 
     }//END ADD PET RECORD
@@ -214,7 +279,6 @@ public class PhotoView extends AppCompatActivity {
     // filename creation dialog so name doesn't have to be changed          //
     //************************************************************************
     public void whatToEdit_Popup() {
-        Log.d("PhotoViewX","hello");
 
         //initiate the builder
         alertDialogBuilder = new AlertDialog.Builder(this);
@@ -247,20 +311,22 @@ public class PhotoView extends AppCompatActivity {
                 //check if filename and image is checked
                 if (filenameAndImage.isChecked()) {
 
-                    //completely restart the add record process. Pass the petID and the recordID through
+                    //completely restart the add record process. Pass the petID and the recordID_AdapterPosition through
                     //the process so these elements can be updated at the end.
                     Intent intent = new Intent(PhotoView.this, AddPetRecordActivity.class);
-                    bundle.putInt("recordID", recordID);
+                    bundle.putInt("recordID", recordID_AdapterPosition);
                     bundle.putInt("petID", pet.getId());
                     intent.putExtras(bundle);
+
+                    Log.d("recordIDONCLICK", Integer.toString(recordID_AdapterPosition));
 
                     startActivity(intent);
                     finish();
 
-                //if filename only is checked. open the addRecord function. Pass the filename
+                    //if filename only is checked. open the addRecord function. Pass the filename
                     //so it will show up in the EditText View for editing
                 } else if (filename_CheckBox.isChecked()) {
-                    filename = databaseHandler1.getRecord_FROMDatabase(recordID);
+                    // filename = databaseHandler1.getRecord_FROMDatabase(recordID_forSearchingDatabase);
                     alertDialog.dismiss();
                     addAPetRecord();
                 }
@@ -268,4 +334,6 @@ public class PhotoView extends AppCompatActivity {
             }//END ON CLICK
         }); //END NEXT BUTTON
     } //END WHAT TO EDIT FUNCTION
+
+
 }//END PHOTOVIEW

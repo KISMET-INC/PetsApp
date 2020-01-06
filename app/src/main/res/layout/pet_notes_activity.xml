@@ -17,6 +17,11 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <include
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -45,7 +50,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:alpha="50"
-                    android:background="#41FFFFFF"
+                    android:background="#90FFA1B7"
                     android:clickable="true">
 
                     <LinearLayout
@@ -85,7 +90,7 @@
                                 android:layout_height="30dp"
                                 android:gravity="center_horizontal|center_vertical"
                                 android:text="2 years 4 months"
-                                android:textColor="#9CFFFFFF"
+                                android:textColor="#8D000000"
                                 android:textSize="18sp"
                                 android:textStyle="bold" />
 
@@ -94,7 +99,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="35dp"
                                 android:gravity="center_horizontal"
-                                android:textColor="#9CFFFFFF"
+                                android:textColor="#9C000000"
                                 android:textSize="18sp"
                                 android:textStyle="bold|italic"
                                 tools:text="8.75"
@@ -106,6 +111,7 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center_horizontal|top|center_vertical"
                                 android:textSize="18sp"
+                                android:textStyle="bold"
                                 android:visibility="visible"
                                 tools:text="10 lbs" />
 
@@ -136,11 +142,6 @@
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <include
-            layout="@layout/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
 
     </LinearLayout>
 

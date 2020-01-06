@@ -12,10 +12,10 @@ android {
     compileSdkVersion 29
     defaultConfig {
         applicationId "com.kismet.petsapp"
-        minSdkVersion 17
+        minSdkVersion 19
         targetSdkVersion 29
-        versionCode 5
-        versionName "5"
+        versionCode 6
+        versionName "6"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         signingConfig signingConfigs.release
         maxSdkVersion 29
