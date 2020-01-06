@@ -190,6 +190,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     Bundle bundle = new Bundle();
                     //  bundle.putInt("recordID", getAdapterPosition());
                     bundle.putInt("petID", pet.getId());
+                    //ListAct(RecycleViewAdapter = 1, PetNotesActivity = 2,
+                    bundle.putInt("where", 1);
 
                     intent.putExtras(bundle);
                     v.getContext().startActivity(intent);
@@ -213,7 +215,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     intent = new Intent(v.getContext(), PetNotesActivity.class);
                     Bundle extras = new Bundle();
                     extras.putInt("petID", pet.getId());
-                    extras.putString("petName", pet.getName());
+                  /*  extras.putString("petName", pet.getName());
                     extras.putString("petAge", ageInYears);
                     //Log.d("RecycleViewAdapter", pet.getNotes());
 
@@ -225,7 +227,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                         extras.putString("petNotes", pet.getNotes());
 
                     }
-
+*/
                     intent.putExtras(extras);
                     v.getContext().startActivity(intent);
 
