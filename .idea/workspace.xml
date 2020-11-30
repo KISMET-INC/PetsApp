@@ -70,98 +70,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eaf7d5a7-0299-4650-9961-447e5c1ea7af" name="Default Changelist" comment="working for api 27">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/paw3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/PetsApp.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_0_0_beta01_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_0_0_beta01_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_1_1_0_beta01_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_1_1_0_beta01_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_resources_1_1_0_beta01_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_resources_1_1_0_beta01_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_asynclayoutinflater_asynclayoutinflater_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_asynclayoutinflater_asynclayoutinflater_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cardview_cardview_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cardview_cardview_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_2_0_0_beta1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_2_0_0_beta1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_1_0_alpha01_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_1_0_alpha01_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_1_0_rc01_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_1_0_rc01_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cursoradapter_cursoradapter_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cursoradapter_cursoradapter_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_customview_customview_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_customview_customview_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_documentfile_documentfile_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_documentfile_documentfile_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_exifinterface_exifinterface_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_exifinterface_exifinterface_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_1_0_beta01_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_1_0_beta01_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_interpolator_interpolator_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_interpolator_interpolator_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_ui_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_ui_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_utils_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_utils_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_2_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_2_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_1_0_beta01_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_1_0_beta01_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_1_0_beta01_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_1_0_beta01_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_loader_loader_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_loader_loader_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_localbroadcastmanager_localbroadcastmanager_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_localbroadcastmanager_localbroadcastmanager_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_print_print_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_print_print_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_1_0_alpha06_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_1_0_alpha06_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_savedstate_savedstate_1_0_0_beta01_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_savedstate_savedstate_1_0_0_beta01_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_slidingpanelayout_slidingpanelayout_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_slidingpanelayout_slidingpanelayout_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_swiperefreshlayout_swiperefreshlayout_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_swiperefreshlayout_swiperefreshlayout_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_core_3_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_core_3_2_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_idling_resource_3_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_idling_resource_3_2_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_monitor_1_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_monitor_1_2_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_runner_1_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_runner_1_2_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_1_0_beta02_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_1_0_beta02_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_animated_1_1_0_beta02_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_animated_1_1_0_beta02_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_1_0_rc01_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_1_0_rc01_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager2_viewpager2_1_0_0_alpha04_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager2_viewpager2_1_0_0_alpha04_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_chrisbanes_PhotoView_2_3_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_chrisbanes_PhotoView_2_3_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_material_material_1_1_0_alpha07_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_material_material_1_1_0_alpha07_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_theartofdev_edmodo_android_image_cropper_2_8_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_theartofdev_edmodo_android_image_cropper_2_8_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_1_1_0_rc01_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_1_1_0_rc01_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_javawriter_2_1_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_javawriter_2_1_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_inject_javax_inject_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_inject_javax_inject_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_13_beta_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_13_beta_3_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__net_sf_kxml_kxml2_2_3_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__net_sf_kxml_kxml2_2_3_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HowOldAreMyPets - with records.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/release/petsapp.aab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Activities/AddPetRecordActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Activities/AddPetRecordActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Activities/ListActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Activities/ListActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Activities/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Activities/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Activities/PetNotesActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Activities/PetNotesActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Activities/PhotoView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Activities/PhotoView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Data/DatabaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Data/DatabaseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/UI/MY_RecycleViewAdapter2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/UI/MY_RecycleViewAdapter2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Util/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Util/UtilMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Util/UtilMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-v26/activity_photo_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-v26/activity_photo_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-v26/enter_pet_records_popup.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-v26/enter_pet_records_popup.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_pet_record2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_pet_record2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_photo_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_photo_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/card_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/card_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_list1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_list1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/edit_what_part_of_record.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/edit_what_part_of_record.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pet_notes_activity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pet_notes_activity.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/recycler_row_for_records.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/recycler_row_for_records.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_notes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_notes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <list id="4b2243de-43ff-41f3-8b6b-8f9dbb8880a4" name="Revert &quot;working for api 27&quot;" comment="Revert &quot;working for api 27&quot;&#10;&#10;This reverts commit 71675616" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DefaultGradleProjectSettings">
-    <option name="isMigrated" value="true" />
-  </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="988ad9315653453451" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_28" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -189,82 +133,6 @@
     <favorites_list name="Unnamed">
       <favorite_root url="com.kismet.petsapp.Activities.ListActivity com.kismet.petsapp.Activities.ListActivity getInstance()" module="app" type="method" klass="com.intellij.ide.favoritesTreeView.smartPointerPsiNodes.MethodSmartPointerNode" />
     </favorites_list>
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/add_pet_image.xml">
-          <provider selected="true" editor-type-id="android-designer2" />
-          <provider editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_photo_view.xml">
-          <provider selected="true" editor-type-id="android-designer2" />
-          <provider editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider editor-type-id="android-manifest" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-v26/activity_photo_view.xml">
-          <provider selected="true" editor-type-id="android-designer2" />
-          <provider editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/recycler_row_for_records.xml">
-          <provider selected="true" editor-type-id="android-designer2" />
-          <provider editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk">
-          <provider selected="true" editor-type-id="apk-viewer" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/edit_what_part_of_record.xml">
-          <provider editor-type-id="android-designer2" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="46" selection-start-line="46" selection-end-line="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/UI/RecyclerViewAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9">
-              <caret line="147" column="8" selection-start-line="147" selection-start-column="8" selection-end-line="147" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -295,188 +163,13 @@
     </option>
     <option name="RESET_MODE" value="HARD" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/newlayout.xml" />
-        <option value="$PROJECT_DIR$/gradle.properties" />
-        <option value="$PROJECT_DIR$/settings.gradle" />
-        <option value="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/local.properties" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/toolbar.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_pet_notes.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Model/Pet.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Data/DatabaseHandlerRecords.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/pet_notes_activity2.xml" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/pet_notes_activity3.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout-v26/activity_add_pet_record.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/menu/records_menu_viewonly.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/menu/add_record_menu.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/MY_RecycleViewAdapter2.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout-v26/popup.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/popup.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/notes_popup.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/PhotoView.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/PetNotesActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/AddPetRecordActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_list1.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_add_pet_record2.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Activities/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Util/UtilMethods.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/UI/RecyclerViewAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Activities/ListActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Util/Constants.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/UI/MY_RecycleViewAdapter2.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Activities/AddPetRecordActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Data/DatabaseHandler.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Activities/PhotoView.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/pet_notes_activity.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_notes.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Activities/PetNotesActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/card_view.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout-v26/enter_pet_records_popup.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout-v26/activity_photo_view.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_photo_view.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/recycler_row_for_records.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/edit_what_part_of_record.xml" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="325" />
-    <option name="y" value="245" />
-    <option name="width" value="980" />
-    <option name="height" value="550" />
-  </component>
+  <component name="ProjectId" id="1l1kXdvX458vqNYBSr8vQizINnr" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="HowOldAreMyPets - with records" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="HowOldAreMyPets - with records" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="HowOldAreMyPets - with records" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HowOldAreMyPets - with records" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="kismet" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HowOldAreMyPets - with records" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="kismet" type="462c0819:PsiDirectoryNode" />
-              <item name="petsapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HowOldAreMyPets - with records" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="HowOldAreMyPets - with records" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HowOldAreMyPets - with records" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="HowOldAreMyPets - with records" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HowOldAreMyPets - with records" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="HowOldAreMyPets - with records" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HowOldAreMyPets - with records" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HowOldAreMyPets - with records" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HowOldAreMyPets - with records" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HowOldAreMyPets - with records" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HowOldAreMyPets - with records" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HowOldAreMyPets - with records" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HowOldAreMyPets - with records" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HowOldAreMyPets - with records" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HowOldAreMyPets - with records" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="kismet" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HowOldAreMyPets - with records" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HowOldAreMyPets - with records" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="kismet" type="462c0819:PsiDirectoryNode" />
-              <item name="petsapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DEBUGGABLE_DEVICE" value="emulator-5554" />
@@ -495,7 +188,7 @@
     <property name="android.sdk.path" value="D:/Sdk" />
     <property name="device.picker.selection" value="Pixel_2_API_28" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/emulator-5554/data/data/com.kismet.petsapp/databases/petListDB1.db" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Suggestions" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -542,18 +235,6 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
@@ -577,8 +258,6 @@
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="Galaxy_Nexus_API_17" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <option name="DEBUGGER_TYPE" value="Auto" />
@@ -809,93 +488,13 @@
       <are-packages-shown value="true" />
     </todo-panel>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.562753" visible="true" weight="0.21946308" />
-      <window_info id="Captures" order="1" sideWeight="0.43717727" side_tool="true" weight="0.252349" />
-      <window_info id="Structure" order="2" sideWeight="0.43838385" side_tool="true" weight="0.252349" />
-      <window_info id="Favorites" order="3" sideWeight="0.43717727" side_tool="true" weight="0.252349" />
-      <window_info id="Image Layers" order="4" />
-      <window_info id="Designer" order="5" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info id="Resources Explorer" order="7" sideWeight="0.8261618" weight="0.32416108" />
-      <window_info id="Build Variants" order="8" sideWeight="0.4234079" weight="0.28389263" />
-      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49798658" weight="0.44813278" />
-      <window_info anchor="bottom" id="TODO" order="1" sideWeight="0.4986577" weight="0.3153527" />
-      <window_info anchor="bottom" id="Debug" order="2" weight="0.32780084" />
-      <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.49798658" weight="0.32918397" />
-      <window_info anchor="bottom" id="Version Control" order="4" sideWeight="0.49530202" weight="0.89626557" />
-      <window_info anchor="bottom" id="Build" order="5" sideWeight="0.60402685" weight="0.16459198" />
-      <window_info anchor="bottom" id="Find" order="6" sideWeight="0.5779133" weight="0.33748272" />
-      <window_info anchor="bottom" id="Android Profiler" order="7" sideWeight="0.4986577" weight="0.05670816" />
-      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.49798658" weight="0.32780084" />
-      <window_info anchor="bottom" id="Dependency Viewer" order="9" sideWeight="0.49932885" weight="0.32918397" />
-      <window_info anchor="bottom" id="Analyze Dataflow to" order="10" weight="0.32918397" />
-      <window_info anchor="bottom" auto_hide="true" x="18" y="476" width="1488" height="352" id="Logcat" order="11" sideWeight="0.63557047" type="FLOATING" weight="0.5020747" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.36442953" weight="0.19640388" />
-      <window_info anchor="bottom" id="SVN Repositories" order="13" weight="0.32918397" />
-      <window_info anchor="right" id="Capture Analysis" order="0" />
-      <window_info anchor="right" id="Gradle" order="1" weight="0.3295302" />
-      <window_info anchor="right" id="Theme Preview" order="2" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="right" id="Assistant" order="4" sideWeight="0.49834436" weight="0.3295302" />
-      <window_info anchor="right" id="Preview" order="5" weight="0.3295302" />
-      <window_info anchor="right" x="869" y="52" width="610" height="845" id="Device File Explorer" order="6" sideWeight="0.50165564" side_tool="true" weight="0.19463088" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.562753" visible="true" weight="0.21946308" />
-      <window_info id="Captures" order="1" sideWeight="0.43717727" side_tool="true" weight="0.252349" />
-      <window_info id="Structure" order="2" sideWeight="0.43838385" side_tool="true" weight="0.252349" />
-      <window_info id="Favorites" order="3" sideWeight="0.43717727" side_tool="true" weight="0.252349" />
-      <window_info id="Image Layers" order="4" />
-      <window_info id="Designer" order="5" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info id="Resources Explorer" order="7" sideWeight="0.8261618" weight="0.32416108" />
-      <window_info id="Build Variants" order="8" sideWeight="0.4234079" weight="0.28389263" />
-      <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49798658" weight="0.44813278" />
-      <window_info anchor="bottom" id="TODO" order="1" sideWeight="0.4986577" weight="0.3153527" />
-      <window_info anchor="bottom" id="Debug" order="2" weight="0.32780084" />
-      <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.49798658" weight="0.32918397" />
-      <window_info anchor="bottom" id="Version Control" order="4" sideWeight="0.49530202" weight="0.8967922" />
-      <window_info anchor="bottom" id="Build" order="5" sideWeight="0.60402685" visible="true" weight="0.16459198" />
-      <window_info anchor="bottom" id="Find" order="6" sideWeight="0.5779133" weight="0.33748272" />
-      <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" sideWeight="0.4986577" weight="0.05670816" />
-      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.49798658" weight="0.32911393" />
-      <window_info anchor="bottom" id="Dependency Viewer" order="9" sideWeight="0.49932885" weight="0.32918397" />
-      <window_info anchor="bottom" id="Analyze Dataflow to" order="10" weight="0.32918397" />
-      <window_info anchor="bottom" auto_hide="true" x="18" y="476" width="1488" height="352" id="Logcat" order="11" sideWeight="0.63557047" type="FLOATING" weight="0.5020747" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.36442953" weight="0.19640388" />
-      <window_info anchor="bottom" id="SVN Repositories" order="13" weight="0.32918397" />
-      <window_info anchor="right" id="Capture Analysis" order="0" />
-      <window_info anchor="right" id="Gradle" order="1" weight="0.3295302" />
-      <window_info anchor="right" id="Theme Preview" order="2" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="right" id="Assistant" order="4" sideWeight="0.49834436" weight="0.3295302" />
-      <window_info anchor="right" id="Preview" order="5" weight="0.3295302" />
-      <window_info anchor="right" x="869" y="52" width="610" height="845" id="Device File Explorer" order="6" sideWeight="0.50165564" side_tool="true" weight="0.19463088" />
-    </layout-to-restore>
-  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
+              <option name="COLUMN_ORDER" />
             </State>
           </value>
         </entry>
@@ -918,6 +517,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/../../GitRepos" />
+    </ignored-roots>
     <MESSAGE value="commit all no gitignore" />
     <MESSAGE value="commit vcs" />
     <MESSAGE value="commit all" />
@@ -942,19 +544,27 @@
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
+  <component name="WindowStateProjectService">
+    <state x="279" y="82" key="FileChooserDialogImpl" timestamp="1606772133464">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="279" y="82" key="FileChooserDialogImpl/0.0.1280.680/1920.0.1440.860@0.0.1280.680" timestamp="1606772133464" />
+    <state x="0" y="0" key="SettingsEditor" timestamp="1606772168065">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="0" y="0" key="SettingsEditor/0.0.1280.680/1920.0.1440.860@0.0.1280.680" timestamp="1606772168065" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Activities/PetNotesActivity.java</url>
           <line>96</line>
-          <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/UI/RecyclerViewAdapter.java</url>
           <line>193</line>
-          <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
@@ -967,198 +577,5 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/samsung-sm_g955u-988ad9315653453451/data/data/com.kismet.petsapp/cache/cropped8800960312405492636.jpg" />
-    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/samsung-sm_g955u-988ad9315653453451/data/data/com.kismet.petsapp/cache/cropped8794676269962918902.jpg" />
-    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/samsung-sm_g955u-988ad9315653453451/data/data/com.kismet.petsapp/cache/cropped860249782281678122.jpg" />
-    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/samsung-sm_g955u-988ad9315653453451/data/data/com.kismet.petsapp/cache/cropped8244605450148224570.jpg" />
-    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/samsung-sm_g955u-988ad9315653453451/data/data/com.kismet.petsapp/cache/cropped8134558887910734081.jpg" />
-    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/samsung-sm_g955u-988ad9315653453451/data/data/com.kismet.petsapp/cache/cropped6847191555985937763.jpg" />
-    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/samsung-sm_g955u-988ad9315653453451/data/data/com.kismet.petsapp/cache/cropped6831173017457123003.jpg" />
-    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/samsung-sm_g955u-988ad9315653453451/data/data/com.kismet.petsapp/cache/cropped6693767128639446229.jpg" />
-    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/samsung-sm_g955u-988ad9315653453451/data/data/com.kismet.petsapp/cache/cropped6783334915993897432.jpg" />
-    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/samsung-sm_g955u-988ad9315653453451/data/data/com.kismet.petsapp/cache/cropped6876354503740080485.jpg" />
-    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/samsung-sm_g955u-988ad9315653453451/data/data/com.kismet.petsapp/cache/cropped6988575948391737037.jpg" />
-    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/samsung-sm_g955u-988ad9315653453451/data/data/com.kismet.petsapp/cache/cropped7059763506748489814.jpg" />
-    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/samsung-sm_g955u-988ad9315653453451/data/data/com.kismet.petsapp/cache/cropped7670345845693572307.jpg" />
-    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/samsung-sm_g955u-988ad9315653453451/data/data/com.kismet.petsapp/cache/cropped790508823421975020.jpg" />
-    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/samsung-sm_g955u-988ad9315653453451/data/data/com.kismet.petsapp/cache/cropped7939855796762737485.jpg" />
-    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/samsung-sm_g955u-988ad9315653453451/data/local/tmp/com.example.howoldaremypets-build-id.txt" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Activities/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Util/UtilMethods.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="39" column="28" lean-forward="true" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Sdk/platforms/android-29/android.jar!/android/os/Binder.class">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/toolbar.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/loading_activity.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/add_record_menu.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Data/DatabaseHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7055">
-          <caret line="442" column="93" selection-start-line="442" selection-start-column="93" selection-end-line="442" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Activities/PhotoView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3842">
-          <caret line="252" column="46" selection-start-line="252" selection-start-column="46" selection-end-line="252" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Activities/AddPetRecordActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2669">
-          <caret line="182" column="108" selection-start-line="182" selection-start-column="108" selection-end-line="182" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Util/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="64" selection-start-line="23" selection-start-column="64" selection-end-line="23" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-v24/paw.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Activities/PetNotesActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6307">
-          <caret line="406" column="35" selection-start-line="406" selection-start-column="35" selection-end-line="406" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-v24/paw3.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/paw.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/Activities/ListActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3264">
-          <caret line="232" column="37" selection-start-line="230" selection-start-column="24" selection-end-line="232" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/pet_notes_activity.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_notes.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/UI/MY_RecycleViewAdapter2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="93" column="9" selection-start-line="93" selection-start-column="9" selection-end-line="93" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/enter_pet_records_popup.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-v26/enter_pet_records_popup.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_list1.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/confirmation_dialog.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add_pet_record2.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/card_view.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/add_pet_image.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_photo_view.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-v26/activity_photo_view.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/recycler_row_for_records.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk">
-      <provider selected="true" editor-type-id="apk-viewer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/kismet/petsapp/UI/RecyclerViewAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9">
-          <caret line="147" column="8" selection-start-line="147" selection-start-column="8" selection-end-line="147" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/edit_what_part_of_record.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>
