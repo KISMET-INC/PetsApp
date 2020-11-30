@@ -12,11 +12,11 @@ The database was an **SQL** database and was built and queried using raw **SQL**
 For the image selection **[ArthurHubs - Android Image Cropper](https://github.com/ArthurHub/Android-Image-Cropper)** on GitHub was integrated into the project.
 
 ## Screenshots
-![alt text](petsapp_readme\petsapp1.png)
-![alt text](petsapp_readme\petsapp2.png)
-![alt text](petsapp_readme\petsapp3.png)
-![alt text](petsapp_readme\petsapp5.png)
-![alt text](petsapp_readme\petsapp4.png)
+![alt text](petsapp_readme/petsapp1.png)
+![alt text](petsapp_readme/petsapp2.png)
+![alt text](petsapp_readme/petsapp3.png)
+![alt text](petsapp_readme/petsapp5.png)
+![alt text](petsapp_readme/petsapp4.png)
 
 ## Installation
 
