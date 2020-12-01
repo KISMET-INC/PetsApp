@@ -14,9 +14,8 @@ For the image selection **[ArthurHubs - Android Image Cropper](https://github.co
 ## Screenshots
 ![alt text](petsapp_readme/petsapp1.png)
 ![alt text](petsapp_readme/petsapp2.png)
-![alt text](petsapp_readme/petsapp3.png)
 ![alt text](petsapp_readme/petsapp5.png)
-![alt text](petsapp_readme/petsapp4.png)
+
 
 ## Installation
 
